@@ -163,12 +163,16 @@ const fetchDocuments = async () => {
   try {
     loading.value = true
     const response = await documentsApi.getDocuments({
-      page: currentPage.value,
+      page: currentPage.value - 1, // Spring Data JPA的页码从0开始
       size: pageSize.value,
       keyword: searchKeyword.value
     })
-    documents.value = response.data.items
-    total.value = response.data.total
+    if (response.code === 200) {
+      documents.value = response.data.items
+      total.value = response.data.total
+    } else {
+      ElMessage.error(response.message || '获取文档列表失败')
+    }
   } catch (error) {
     ElMessage.error('获取文档列表失败')
   } finally {

@@ -1,6 +1,8 @@
 package com.filemanager.controller;
 
+import com.filemanager.model.dto.ApiResponse;
 import com.filemanager.model.dto.DocumentDTO;
+import com.filemanager.model.dto.PageResponse;
 import com.filemanager.service.DocumentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.Resource;
@@ -21,44 +23,80 @@ public class DocumentController {
     private final DocumentService documentService;
 
     @PostMapping("/upload")
-    public ResponseEntity<DocumentDTO> uploadDocument(
+    public ResponseEntity<?> uploadDocument(
             @RequestParam("file") MultipartFile file,
             @RequestParam("title") String title,
             @RequestParam(value = "description", required = false) String description,
             @RequestParam(value = "tags", required = false) List<String> tags) {
-        return ResponseEntity.ok(documentService.uploadDocument(file, title, description, tags));
+        return ResponseEntity.ok(new ApiResponse<>(
+            200,
+            "上传成功",
+            documentService.uploadDocument(file, title, description, tags)
+        ));
     }
 
     @GetMapping
-    public ResponseEntity<Page<DocumentDTO>> getDocuments(Pageable pageable) {
-        return ResponseEntity.ok(documentService.getDocuments(pageable));
+    public ResponseEntity<?> getDocuments(Pageable pageable) {
+        Page<DocumentDTO> page = documentService.getDocuments(pageable);
+        return ResponseEntity.ok(new ApiResponse<>(
+            200,
+            "success",
+            new PageResponse<>(
+                page.getTotalElements(),
+                page.getTotalPages(),
+                page.getNumber() + 1,
+                page.getContent()
+            )
+        ));
     }
 
     @GetMapping("/search")
-    public ResponseEntity<Page<DocumentDTO>> searchDocuments(
+    public ResponseEntity<?> searchDocuments(
             @RequestParam String keyword,
             Pageable pageable) {
-        return ResponseEntity.ok(documentService.searchDocuments(keyword, pageable));
+        Page<DocumentDTO> page = documentService.searchDocuments(keyword, pageable);
+        return ResponseEntity.ok(new ApiResponse<>(
+            200,
+            "success",
+            new PageResponse<>(
+                page.getTotalElements(),
+                page.getTotalPages(),
+                page.getNumber() + 1,
+                page.getContent()
+            )
+        ));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<DocumentDTO> getDocument(@PathVariable Long id) {
-        return ResponseEntity.ok(documentService.getDocument(id));
+    public ResponseEntity<?> getDocument(@PathVariable Long id) {
+        return ResponseEntity.ok(new ApiResponse<>(
+            200,
+            "success",
+            documentService.getDocument(id)
+        ));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<DocumentDTO> updateDocument(
+    public ResponseEntity<?> updateDocument(
             @PathVariable Long id,
             @RequestParam(value = "title", required = false) String title,
             @RequestParam(value = "description", required = false) String description,
             @RequestParam(value = "tags", required = false) List<String> tags) {
-        return ResponseEntity.ok(documentService.updateDocument(id, title, description, tags));
+        return ResponseEntity.ok(new ApiResponse<>(
+            200,
+            "更新成功",
+            documentService.updateDocument(id, title, description, tags)
+        ));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteDocument(@PathVariable Long id) {
+    public ResponseEntity<?> deleteDocument(@PathVariable Long id) {
         documentService.deleteDocument(id);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(new ApiResponse<>(
+            200,
+            "删除成功",
+            null
+        ));
     }
 
     @GetMapping("/{id}/download")
