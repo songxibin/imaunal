@@ -122,7 +122,7 @@ const fetchDashboardData = async () => {
     const response = await documentsApi.getDocuments({
       page: 1,
       size: 5,
-      sortBy: 'uploadTime',
+      sortBy: 'createdAt',
       sortOrder: 'desc'
     })
     

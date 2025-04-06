@@ -66,9 +66,12 @@ const handleSubmit = async () => {
   try {
     await formRef.value.validate()
     loading.value = true
-    await authStore.login(form.value)
+    console.log('Login form data:', form.value)
+    const result = await authStore.login(form.value)
+    console.log('Login result:', result)
     ElMessage.success('登录成功')
   } catch (error) {
+    console.error('Login error:', error)
     ElMessage.error(error.response?.data?.message || '登录失败')
   } finally {
     loading.value = false

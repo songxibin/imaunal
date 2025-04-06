@@ -133,14 +133,25 @@ const rules = {
 const fetchUserInfo = async () => {
   try {
     const response = await authApi.getCurrentUser()
-    const { username, email, fullName } = response.data
+    console.log('Profile received user data:', response)
+    
+    // Update the form with user data
+    const { username, email, fullName } = response
     form.value = {
       ...form.value,
       username,
       email,
       fullName
     }
+    
+    // Update the auth store with user data
+    authStore.updateUserInfo({
+      username,
+      email,
+      fullName
+    })
   } catch (error) {
+    console.error('Error fetching user info:', error)
     ElMessage.error('获取用户信息失败')
   }
 }

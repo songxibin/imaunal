@@ -56,9 +56,13 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore()
   
+  console.log('Navigation guard - to:', to.path, 'isAuthenticated:', authStore.isAuthenticated)
+  
   if (to.meta.requiresAuth && !authStore.isAuthenticated) {
+    console.log('Redirecting to login - requires auth but not authenticated')
     next('/login')
   } else {
+    console.log('Proceeding with navigation')
     next()
   }
 })

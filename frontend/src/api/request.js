@@ -21,9 +21,11 @@ request.interceptors.request.use(
 
 request.interceptors.response.use(
   response => {
+    console.log('API response:', response)
     return response.data
   },
   error => {
+    console.error('API error:', error)
     if (error.response) {
       switch (error.response.status) {
         case 401:

@@ -38,9 +38,9 @@
           {{ formatFileSize(row.fileSize) }}
         </template>
       </el-table-column>
-      <el-table-column prop="uploadTime" label="上传时间" width="180">
+      <el-table-column prop="createdAt" label="上传时间" width="180">
         <template #default="{ row }">
-          {{ formatDate(row.uploadTime) }}
+          {{ formatDate(row.createdAt) }}
         </template>
       </el-table-column>
       <el-table-column label="操作" width="200">
@@ -165,7 +165,9 @@ const fetchDocuments = async () => {
     const response = await documentsApi.getDocuments({
       page: currentPage.value - 1, // Spring Data JPA的页码从0开始
       size: pageSize.value,
-      keyword: searchKeyword.value
+      keyword: searchKeyword.value,
+      sortBy: 'createdAt',
+      sortOrder: 'desc'
     })
     console.log('API Response:', response)
     
