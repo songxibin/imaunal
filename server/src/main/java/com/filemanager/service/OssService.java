@@ -42,4 +42,15 @@ public interface OssService {
      * @return The signed URL
      */
     URL generateSignedUrl(String objectName, long expirationInMillis);
+
+    /**
+     * Copy a file from one bucket to another
+     *
+     * @param sourceObjectName The source object name
+     * @param targetBucketName The target bucket name
+     * @param targetObjectName The target object name
+     * @return The URL of the copied file
+     * @throws IOException If an I/O error occurs
+     */
+    String copyFile(String sourceObjectName, String targetBucketName, String targetObjectName) throws IOException;
 } 

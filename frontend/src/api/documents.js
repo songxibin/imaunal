@@ -40,5 +40,26 @@ export const documentsApi = {
       url: `/documents/${id}`,
       method: 'delete'
     })
+  },
+  
+  publishDocument(id) {
+    return request({
+      url: `/documents/${id}/publish`,
+      method: 'post'
+    })
+  },
+  
+  unpublishDocument(id) {
+    return request({
+      url: `/documents/${id}/unpublish`,
+      method: 'post'
+    })
+  },
+
+  getDashboardStats() {
+    return request({
+      url: '/documents/stats',
+      method: 'get'
+    })
   }
 } 

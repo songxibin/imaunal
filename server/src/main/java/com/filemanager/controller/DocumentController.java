@@ -2,6 +2,7 @@ package com.filemanager.controller;
 
 import com.filemanager.model.dto.ApiResponse;
 import com.filemanager.model.dto.DocumentDTO;
+import com.filemanager.model.dto.DashboardStatsDTO;
 import com.filemanager.model.dto.PageResponse;
 import com.filemanager.service.DocumentService;
 import lombok.RequiredArgsConstructor;
@@ -118,7 +119,7 @@ public class DocumentController {
                 document
             ));
         } catch (Exception e) {
-            logger.error("Failed to get document with ID: {}", id, e);
+            logger.error("Failed to get document: {}", id, e);
             throw e;
         }
     }
@@ -139,7 +140,7 @@ public class DocumentController {
                 document
             ));
         } catch (Exception e) {
-            logger.error("Failed to update document with ID: {}", id, e);
+            logger.error("Failed to update document: {}", id, e);
             throw e;
         }
     }
@@ -156,7 +157,7 @@ public class DocumentController {
                 null
             ));
         } catch (Exception e) {
-            logger.error("Failed to delete document with ID: {}", id, e);
+            logger.error("Failed to delete document: {}", id, e);
             throw e;
         }
     }
@@ -166,13 +167,14 @@ public class DocumentController {
         logger.info("Downloading document with ID: {}", id);
         try {
             Resource resource = documentService.downloadDocument(id);
-            logger.info("Document download prepared: {}", id);
+            DocumentDTO document = documentService.getDocument(id);
+            
             return ResponseEntity.ok()
-                    .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
+                    .contentType(MediaType.parseMediaType(document.getFileType()))
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + document.getFileName() + "\"")
                     .body(resource);
         } catch (Exception e) {
-            logger.error("Failed to download document with ID: {}", id, e);
+            logger.error("Failed to download document: {}", id, e);
             throw e;
         }
     }
@@ -185,7 +187,58 @@ public class DocumentController {
             logger.info("Preview URL generated: {}", previewUrl);
             return ResponseEntity.ok(previewUrl);
         } catch (Exception e) {
-            logger.error("Failed to get preview URL for document with ID: {}", id, e);
+            logger.error("Failed to get preview URL for document: {}", id, e);
+            throw e;
+        }
+    }
+    
+    @PostMapping("/{id}/publish")
+    public ResponseEntity<?> publishDocument(@PathVariable Long id) {
+        logger.info("Publishing document with ID: {}", id);
+        try {
+            DocumentDTO document = documentService.publishDocument(id);
+            logger.info("Document published successfully: {}", document.getDocumentId());
+            return ResponseEntity.ok(new ApiResponse<>(
+                200,
+                "发布成功",
+                document
+            ));
+        } catch (Exception e) {
+            logger.error("Failed to publish document: {}", id, e);
+            throw e;
+        }
+    }
+    
+    @PostMapping("/{id}/unpublish")
+    public ResponseEntity<?> unpublishDocument(@PathVariable Long id) {
+        logger.info("Unpublishing document with ID: {}", id);
+        try {
+            DocumentDTO document = documentService.unpublishDocument(id);
+            logger.info("Document unpublished successfully: {}", document.getDocumentId());
+            return ResponseEntity.ok(new ApiResponse<>(
+                200,
+                "取消发布成功",
+                document
+            ));
+        } catch (Exception e) {
+            logger.error("Failed to unpublish document: {}", id, e);
+            throw e;
+        }
+    }
+
+    @GetMapping("/stats")
+    public ResponseEntity<?> getDashboardStats() {
+        logger.info("Getting dashboard statistics");
+        try {
+            DashboardStatsDTO stats = documentService.getDashboardStats();
+            logger.info("Dashboard statistics retrieved successfully");
+            return ResponseEntity.ok(new ApiResponse<>(
+                200,
+                "success",
+                stats
+            ));
+        } catch (Exception e) {
+            logger.error("Failed to get dashboard statistics", e);
             throw e;
         }
     }

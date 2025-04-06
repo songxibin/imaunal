@@ -1,6 +1,7 @@
 package com.filemanager.service.impl;
 
 import com.aliyun.oss.OSS;
+import com.aliyun.oss.model.CopyObjectRequest;
 import com.aliyun.oss.model.OSSObject;
 import com.aliyun.oss.model.ObjectMetadata;
 import com.aliyun.oss.model.PutObjectRequest;
@@ -122,5 +123,27 @@ public class OssServiceImpl implements OssService {
         logger.info("Signed URL generated successfully for OSS object: {}", fullObjectName);
         
         return url;
+    }
+    
+    @Override
+    public String copyFile(String sourceObjectName, String targetBucketName, String targetObjectName) throws IOException {
+        logger.debug("Copying file from {} to {}/{}", sourceObjectName, targetBucketName, targetObjectName);
+        
+        // Create the full source object name with directory prefix
+        String fullSourceObjectName = directoryPrefix + "/" + sourceObjectName;
+        
+        // Create the full target object name with directory prefix
+        String fullTargetObjectName = directoryPrefix + "/" + targetObjectName;
+        
+        // Create copy object request
+        CopyObjectRequest copyObjectRequest = new CopyObjectRequest(bucketName, fullSourceObjectName, targetBucketName, fullTargetObjectName);
+        
+        // Copy the object
+        ossClient.copyObject(copyObjectRequest);
+        
+        logger.info("File copied successfully from {} to {}/{}", fullSourceObjectName, targetBucketName, fullTargetObjectName);
+        
+        // Return the URL of the copied file
+        return "https://" + targetBucketName + "." + domain + "/" + fullTargetObjectName;
     }
 } 

@@ -119,21 +119,18 @@ const formatDate = (date) => {
 
 const fetchDashboardData = async () => {
   try {
-    const response = await documentsApi.getDocuments({
+    // Fetch dashboard statistics
+    const statsResponse = await documentsApi.getDashboardStats()
+    stats.value = statsResponse.data
+
+    // Fetch recent documents
+    const documentsResponse = await documentsApi.getDocuments({
       page: 1,
       size: 5,
       sortBy: 'createdAt',
       sortOrder: 'desc'
     })
-    
-    recentDocuments.value = response.data.items
-    stats.value = {
-      totalDocuments: response.data.total,
-      monthlyUploads: response.data.items.filter(doc => 
-        dayjs(doc.uploadTime).isAfter(dayjs().startOf('month'))
-      ).length,
-      totalStorage: response.data.items.reduce((acc, doc) => acc + doc.fileSize, 0)
-    }
+    recentDocuments.value = documentsResponse.data.items
   } catch (error) {
     console.error('Failed to fetch dashboard data:', error)
   }

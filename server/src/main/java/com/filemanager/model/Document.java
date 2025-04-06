@@ -46,6 +46,10 @@ public class Document {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+    private DocumentStatus status = DocumentStatus.DRAFT;
+
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();

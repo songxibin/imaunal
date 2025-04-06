@@ -38,12 +38,19 @@
           {{ formatFileSize(row.fileSize) }}
         </template>
       </el-table-column>
+      <el-table-column prop="status" label="状态" width="100">
+        <template #default="{ row }">
+          <el-tag :type="row.status === 'PUBLISHED' ? 'success' : 'info'">
+            {{ row.status === 'PUBLISHED' ? '已发布' : '草稿' }}
+          </el-tag>
+        </template>
+      </el-table-column>
       <el-table-column prop="createdAt" label="上传时间" width="180">
         <template #default="{ row }">
           {{ formatDate(row.createdAt) }}
         </template>
       </el-table-column>
-      <el-table-column label="操作" width="200">
+      <el-table-column label="操作" width="300">
         <template #default="{ row }">
           <el-button-group>
             <el-button
@@ -58,6 +65,22 @@
               @click="handleEdit(row)"
             >
               编辑
+            </el-button>
+            <el-button
+              v-if="row.status !== 'PUBLISHED'"
+              size="small"
+              type="success"
+              @click="handlePublish(row)"
+            >
+              发布
+            </el-button>
+            <el-button
+              v-if="row.status === 'PUBLISHED'"
+              size="small"
+              type="warning"
+              @click="handleUnpublish(row)"
+            >
+              取消发布
             </el-button>
             <el-button
               size="small"
@@ -272,6 +295,48 @@ const handleDelete = (row) => {
       fetchDocuments()
     } catch (error) {
       ElMessage.error('删除失败')
+    }
+  })
+}
+
+// 处理发布
+const handlePublish = (row) => {
+  ElMessageBox.confirm(
+    '确定要发布该文档吗？发布后文档将变为公开状态。',
+    '提示',
+    {
+      confirmButtonText: '确定',
+      cancelButtonText: '取消',
+      type: 'info'
+    }
+  ).then(async () => {
+    try {
+      await documentsApi.publishDocument(row.documentId)
+      ElMessage.success('发布成功')
+      fetchDocuments()
+    } catch (error) {
+      ElMessage.error('发布失败')
+    }
+  })
+}
+
+// 处理取消发布
+const handleUnpublish = (row) => {
+  ElMessageBox.confirm(
+    '确定要取消发布该文档吗？取消发布后文档将从公共存储桶中删除。',
+    '警告',
+    {
+      confirmButtonText: '确定',
+      cancelButtonText: '取消',
+      type: 'warning'
+    }
+  ).then(async () => {
+    try {
+      await documentsApi.unpublishDocument(row.documentId)
+      ElMessage.success('取消发布成功')
+      fetchDocuments()
+    } catch (error) {
+      ElMessage.error('取消发布失败')
     }
   })
 }

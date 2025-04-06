@@ -20,6 +20,22 @@
               <el-icon><Download /></el-icon>
               下载
             </el-button>
+            <el-button 
+              v-if="document.status === 'DRAFT'" 
+              type="success" 
+              @click="handlePublish"
+            >
+              <el-icon><Upload /></el-icon>
+              发布
+            </el-button>
+            <el-button 
+              v-if="document.status === 'PUBLISHED'" 
+              type="warning" 
+              @click="handleUnpublish"
+            >
+              <el-icon><Download /></el-icon>
+              取消发布
+            </el-button>
             <el-button type="danger" @click="handleDelete">
               <el-icon><Delete /></el-icon>
               删除
@@ -45,6 +61,11 @@
           <el-descriptions-item label="上传者">
             {{ document.creator?.username || '未知' }}
           </el-descriptions-item>
+          <el-descriptions-item label="状态">
+            <el-tag :type="document.status === 'PUBLISHED' ? 'success' : 'info'">
+              {{ document.status === 'PUBLISHED' ? '已发布' : '草稿' }}
+            </el-tag>
+          </el-descriptions-item>
           <el-descriptions-item label="标签">
             <el-tag
               v-for="tag in document.tags"
@@ -54,6 +75,9 @@
             >
               {{ tag }}
             </el-tag>
+          </el-descriptions-item>
+          <el-descriptions-item label="文档ID">
+            {{ document.documentId }}
           </el-descriptions-item>
         </el-descriptions>
         
@@ -73,6 +97,14 @@
             </div>
           </div>
         </div>
+        
+        <div class="qr-section" v-if="document.status === 'PUBLISHED'">
+          <h3>文档访问二维码</h3>
+          <div class="qr-container">
+            <QRCodeVue :value="publicUrl" :size="200" level="H" />
+            <p class="qr-tip">扫描二维码访问文档</p>
+          </div>
+        </div>
       </div>
     </el-card>
   </div>
@@ -82,14 +114,16 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { Download, Delete, ArrowLeft } from '@element-plus/icons-vue'
+import { Download, Delete, ArrowLeft, Upload } from '@element-plus/icons-vue'
 import { documentsApi } from '@/api/documents'
+import QRCodeVue from 'qrcode.vue'
 import dayjs from 'dayjs'
 
 const route = useRoute()
 const router = useRouter()
 const loading = ref(false)
 const document = ref({})
+const publicUrl = ref('')
 
 // 计算属性
 const isImage = computed(() => {
@@ -107,6 +141,13 @@ const fetchDocumentDetail = async () => {
     loading.value = true
     const response = await documentsApi.getDocumentById(route.params.id)
     document.value = response.data
+    
+    // 如果是已发布的文档，生成公共访问URL
+    if (document.value.status === 'PUBLISHED') {
+      // 这里使用当前域名和路径构建公共URL
+      const baseUrl = window.location.origin
+      publicUrl.value = `${baseUrl}/public/documents/${document.value.documentId}`
+    }
   } catch (error) {
     ElMessage.error('获取文档详情失败')
     router.push('/documents')
@@ -122,6 +163,54 @@ const handleDownload = () => {
   } else {
     ElMessage.warning('下载链接不可用')
   }
+}
+
+// 处理发布
+const handlePublish = () => {
+  ElMessageBox.confirm(
+    '确定要发布该文档吗？发布后文档将公开可见',
+    '提示',
+    {
+      confirmButtonText: '确定',
+      cancelButtonText: '取消',
+      type: 'info'
+    }
+  ).then(async () => {
+    try {
+      loading.value = true
+      await documentsApi.publishDocument(route.params.id)
+      ElMessage.success('发布成功')
+      fetchDocumentDetail()
+    } catch (error) {
+      ElMessage.error('发布失败')
+    } finally {
+      loading.value = false
+    }
+  })
+}
+
+// 处理取消发布
+const handleUnpublish = () => {
+  ElMessageBox.confirm(
+    '确定要取消发布该文档吗？取消发布后文档将不再公开可见',
+    '提示',
+    {
+      confirmButtonText: '确定',
+      cancelButtonText: '取消',
+      type: 'warning'
+    }
+  ).then(async () => {
+    try {
+      loading.value = true
+      await documentsApi.unpublishDocument(route.params.id)
+      ElMessage.success('取消发布成功')
+      fetchDocumentDetail()
+    } catch (error) {
+      ElMessage.error('取消发布失败')
+    } finally {
+      loading.value = false
+    }
+  })
 }
 
 // 处理删除
@@ -199,7 +288,7 @@ onMounted(() => {
   margin-top: 20px;
 }
 
-.description-section, .preview-section {
+.description-section, .preview-section, .qr-section {
   margin-top: 20px;
 }
 
@@ -223,5 +312,22 @@ onMounted(() => {
 
 .el-tag {
   margin-right: 5px;
+}
+
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  padding: 20px;
+  border: 1px solid #ebeef5;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.qr-tip {
+  margin-top: 10px;
+  color: #606266;
+  font-size: 14px;
 }
 </style> 

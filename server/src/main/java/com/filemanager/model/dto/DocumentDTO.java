@@ -1,5 +1,6 @@
 package com.filemanager.model.dto;
 
+import com.filemanager.model.DocumentStatus;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -21,4 +22,5 @@ public class DocumentDTO {
     private LocalDateTime uploadTime;
     private String downloadUrl;
     private String previewUrl;
+    private DocumentStatus status;
 } 

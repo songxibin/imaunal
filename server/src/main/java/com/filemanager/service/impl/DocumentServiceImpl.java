@@ -1,13 +1,16 @@
 package com.filemanager.service.impl;
 
 import com.filemanager.model.Document;
+import com.filemanager.model.DocumentStatus;
 import com.filemanager.model.User;
 import com.filemanager.model.dto.DocumentDTO;
 import com.filemanager.model.dto.UserDTO;
+import com.filemanager.model.dto.DashboardStatsDTO;
 import com.filemanager.repository.DocumentRepository;
 import com.filemanager.service.DocumentService;
 import com.filemanager.service.OssService;
 import com.filemanager.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -36,6 +39,7 @@ public class DocumentServiceImpl implements DocumentService {
     private final String uploadDir;
     private final String storageType;
     private final long urlExpiration;
+    private final String publicBucketName;
 
     public DocumentServiceImpl(
             DocumentRepository documentRepository,
@@ -43,13 +47,15 @@ public class DocumentServiceImpl implements DocumentService {
             OssService ossService,
             @Value("${file.upload-dir}") String uploadDir,
             @Value("${file.storage-type}") String storageType,
-            @Value("${file.download-url-expiration}") long urlExpiration) {
+            @Value("${file.download-url-expiration}") long urlExpiration,
+            @Value("${aliyun.oss.public-bucket-name}") String publicBucketName) {
         this.documentRepository = documentRepository;
         this.userService = userService;
         this.ossService = ossService;
         this.uploadDir = uploadDir;
         this.storageType = storageType;
         this.urlExpiration = urlExpiration;
+        this.publicBucketName = publicBucketName;
         
         // Create local upload directory if using local storage
         if ("local".equals(storageType)) {
@@ -94,6 +100,7 @@ public class DocumentServiceImpl implements DocumentService {
             document.setFileSize(file.getSize());
             document.setFileType(file.getContentType());
             document.setTags(tags);
+            document.setStatus(DocumentStatus.DRAFT);
             
             User currentUser = (User) userService.loadUserByUsername(
                     userService.getCurrentUser().getUsername());
@@ -257,6 +264,127 @@ public class DocumentServiceImpl implements DocumentService {
             return previewUrl;
         }
     }
+    
+    @Override
+    @Transactional
+    public DocumentDTO publishDocument(Long id) {
+        logger.debug("Publishing document with ID: {}", id);
+        Document document = documentRepository.findById(id)
+                .orElseThrow(() -> {
+                    logger.error("Document not found with ID: {}", id);
+                    return new RuntimeException("Document not found");
+                });
+        
+        // Check if document is already published
+        if (DocumentStatus.PUBLISHED.equals(document.getStatus())) {
+            logger.warn("Document is already published: {}", id);
+            return convertToDTO(document);
+        }
+        
+        try {
+            if ("oss".equals(storageType)) {
+                // Copy file from current bucket to public bucket
+                String publicFilePath = ossService.copyFile(
+                    document.getFileName(), 
+                    publicBucketName, 
+                    document.getFileName()
+                );
+                logger.debug("File copied to public bucket: {}", publicFilePath);
+                
+                // Update document status to PUBLISHED
+                document.setStatus(DocumentStatus.PUBLISHED);
+                document.setFilePath(publicFilePath);
+                
+                Document updatedDocument = documentRepository.save(document);
+                logger.info("Document published successfully: {}", updatedDocument.getId());
+                return convertToDTO(updatedDocument);
+            } else {
+                // For local storage, we don't need to copy the file
+                // Just update the document status to PUBLISHED
+                document.setStatus(DocumentStatus.PUBLISHED);
+                
+                Document updatedDocument = documentRepository.save(document);
+                logger.info("Document published successfully: {}", updatedDocument.getId());
+                return convertToDTO(updatedDocument);
+            }
+        } catch (IOException ex) {
+            logger.error("Error publishing document: {}", id, ex);
+            throw new RuntimeException("Could not publish document", ex);
+        }
+    }
+    
+    @Override
+    @Transactional
+    public DocumentDTO unpublishDocument(Long id) {
+        logger.debug("Unpublishing document with ID: {}", id);
+        Document document = documentRepository.findById(id)
+                .orElseThrow(() -> {
+                    logger.error("Document not found with ID: {}", id);
+                    return new RuntimeException("Document not found");
+                });
+        
+        // Check if document is already in draft status
+        if (DocumentStatus.DRAFT.equals(document.getStatus())) {
+            logger.warn("Document is already in draft status: {}", id);
+            return convertToDTO(document);
+        }
+        
+        try {
+            if ("oss".equals(storageType)) {
+                // Delete file from public bucket
+                ossService.deleteFile(document.getFileName());
+                logger.debug("File deleted from public bucket: {}", document.getFileName());
+                
+                // Update document status to DRAFT
+                document.setStatus(DocumentStatus.DRAFT);
+                
+                Document updatedDocument = documentRepository.save(document);
+                logger.info("Document unpublished successfully: {}", updatedDocument.getId());
+                return convertToDTO(updatedDocument);
+            } else {
+                // For local storage, we don't need to do anything with the file
+                // Just update the document status to DRAFT
+                document.setStatus(DocumentStatus.DRAFT);
+                
+                Document updatedDocument = documentRepository.save(document);
+                logger.info("Document unpublished successfully: {}", updatedDocument.getId());
+                return convertToDTO(updatedDocument);
+            }
+        } catch (IOException ex) {
+            logger.error("Error unpublishing document: {}", id, ex);
+            throw new RuntimeException("Could not unpublish document", ex);
+        }
+    }
+
+    @Override
+    public DashboardStatsDTO getDashboardStats() {
+        logger.info("Getting dashboard statistics");
+        
+        // Get total documents count
+        long totalDocuments = documentRepository.count();
+        
+        // Get monthly uploads (documents created in the current month)
+        LocalDateTime startOfMonth = LocalDateTime.now().withDayOfMonth(1).withHour(0).withMinute(0).withSecond(0);
+        long monthlyUploads = documentRepository.countByCreatedAtAfter(startOfMonth);
+        
+        // Get total storage used
+        long totalStorage = documentRepository.sumFileSize();
+        
+        // Get document status distribution
+        long publishedDocuments = documentRepository.countByStatus(DocumentStatus.PUBLISHED);
+        long draftDocuments = documentRepository.countByStatus(DocumentStatus.DRAFT);
+        
+        logger.info("Dashboard statistics retrieved - total: {}, monthly: {}, storage: {}, published: {}, draft: {}", 
+            totalDocuments, monthlyUploads, totalStorage, publishedDocuments, draftDocuments);
+        
+        return new DashboardStatsDTO(
+            totalDocuments,
+            monthlyUploads,
+            totalStorage,
+            publishedDocuments,
+            draftDocuments
+        );
+    }
 
     private DocumentDTO convertToDTO(Document document) {
         logger.trace("Converting Document to DTO: {}", document.getId());
@@ -274,6 +402,7 @@ public class DocumentServiceImpl implements DocumentService {
         dto.setUploadTime(document.getCreatedAt());
         dto.setDownloadUrl("/api/v1/documents/" + document.getId() + "/download");
         dto.setPreviewUrl(getPreviewUrl(document.getId()));
+        dto.setStatus(document.getStatus());
         
         if (document.getCreator() != null) {
             UserDTO creatorDTO = new UserDTO();
