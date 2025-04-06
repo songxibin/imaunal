@@ -6,12 +6,12 @@ import com.filemanager.model.dto.DocumentDTO;
 import com.filemanager.model.dto.UserDTO;
 import com.filemanager.repository.DocumentRepository;
 import com.filemanager.service.DocumentService;
+import com.filemanager.service.OssService;
 import com.filemanager.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -32,21 +32,34 @@ public class DocumentServiceImpl implements DocumentService {
     private static final Logger logger = LoggerFactory.getLogger(DocumentServiceImpl.class);
     private final DocumentRepository documentRepository;
     private final UserService userService;
+    private final OssService ossService;
     private final String uploadDir;
+    private final String storageType;
+    private final long urlExpiration;
 
     public DocumentServiceImpl(
             DocumentRepository documentRepository,
             UserService userService,
-            @Value("${file.upload-dir}") String uploadDir) {
+            OssService ossService,
+            @Value("${file.upload-dir}") String uploadDir,
+            @Value("${file.storage-type}") String storageType,
+            @Value("${file.download-url-expiration}") long urlExpiration) {
         this.documentRepository = documentRepository;
         this.userService = userService;
+        this.ossService = ossService;
         this.uploadDir = uploadDir;
-        try {
-            Files.createDirectories(Paths.get(uploadDir));
-            logger.info("Upload directory created or already exists: {}", uploadDir);
-        } catch (IOException ex) {
-            logger.error("Could not create the directory where the uploaded files will be stored: {}", uploadDir, ex);
-            throw new RuntimeException("Could not create the directory where the uploaded files will be stored.", ex);
+        this.storageType = storageType;
+        this.urlExpiration = urlExpiration;
+        
+        // Create local upload directory if using local storage
+        if ("local".equals(storageType)) {
+            try {
+                Files.createDirectories(Paths.get(uploadDir));
+                logger.info("Upload directory created or already exists: {}", uploadDir);
+            } catch (IOException ex) {
+                logger.error("Could not create the directory where the uploaded files will be stored: {}", uploadDir, ex);
+                throw new RuntimeException("Could not create the directory where the uploaded files will be stored.", ex);
+            }
         }
     }
 
@@ -58,17 +71,26 @@ public class DocumentServiceImpl implements DocumentService {
         
         try {
             String fileName = UUID.randomUUID().toString() + "_" + file.getOriginalFilename();
-            Path targetLocation = Paths.get(uploadDir).resolve(fileName);
-            logger.debug("Saving file to: {}", targetLocation);
+            String filePath;
             
-            Files.copy(file.getInputStream(), targetLocation);
-            logger.debug("File saved successfully");
+            if ("oss".equals(storageType)) {
+                // Upload to Aliyun OSS
+                filePath = ossService.uploadFile(file, fileName);
+                logger.debug("File uploaded to OSS: {}", filePath);
+            } else {
+                // Upload to local storage
+                Path targetLocation = Paths.get(uploadDir).resolve(fileName);
+                logger.debug("Saving file to: {}", targetLocation);
+                Files.copy(file.getInputStream(), targetLocation);
+                filePath = targetLocation.toString();
+                logger.debug("File saved successfully");
+            }
 
             Document document = new Document();
             document.setTitle(title);
             document.setDescription(description);
             document.setFileName(fileName);
-            document.setFilePath(targetLocation.toString());
+            document.setFilePath(filePath);
             document.setFileSize(file.getSize());
             document.setFileType(file.getContentType());
             document.setTags(tags);
@@ -158,13 +180,20 @@ public class DocumentServiceImpl implements DocumentService {
                 });
 
         try {
-            Path filePath = Paths.get(document.getFilePath());
-            logger.debug("Deleting file at: {}", filePath);
-            boolean deleted = Files.deleteIfExists(filePath);
-            if (deleted) {
-                logger.debug("File deleted successfully");
+            if ("oss".equals(storageType)) {
+                // Delete from Aliyun OSS
+                ossService.deleteFile(document.getFileName());
+                logger.debug("File deleted from OSS: {}", document.getFileName());
             } else {
-                logger.warn("File not found at: {}", filePath);
+                // Delete from local storage
+                Path filePath = Paths.get(document.getFilePath());
+                logger.debug("Deleting file at: {}", filePath);
+                boolean deleted = Files.deleteIfExists(filePath);
+                if (deleted) {
+                    logger.debug("File deleted successfully");
+                } else {
+                    logger.warn("File not found at: {}", filePath);
+                }
             }
         } catch (IOException ex) {
             logger.error("Could not delete file: {}", document.getFilePath(), ex);
@@ -185,18 +214,24 @@ public class DocumentServiceImpl implements DocumentService {
                 });
 
         try {
-            Path filePath = Paths.get(document.getFilePath());
-            logger.debug("Loading file from: {}", filePath);
-            Resource resource = new UrlResource(filePath.toUri());
-            if (resource.exists()) {
-                logger.debug("File found and ready for download");
-                return resource;
+            if ("oss".equals(storageType)) {
+                // Download from Aliyun OSS
+                return ossService.downloadFile(document.getFileName());
             } else {
-                logger.error("File not found at: {}", filePath);
-                throw new RuntimeException("File not found");
+                // Download from local storage
+                Path filePath = Paths.get(document.getFilePath());
+                logger.debug("Loading file from: {}", filePath);
+                Resource resource = new org.springframework.core.io.UrlResource(filePath.toUri());
+                if (resource.exists()) {
+                    logger.debug("File found and ready for download");
+                    return resource;
+                } else {
+                    logger.error("File not found at: {}", filePath);
+                    throw new RuntimeException("File not found");
+                }
             }
-        } catch (MalformedURLException ex) {
-            logger.error("Invalid file path: {}", document.getFilePath(), ex);
+        } catch (IOException ex) {
+            logger.error("Error downloading file: {}", document.getFilePath(), ex);
             throw new RuntimeException("File not found", ex);
         }
     }
@@ -204,10 +239,23 @@ public class DocumentServiceImpl implements DocumentService {
     @Override
     public String getPreviewUrl(Long id) {
         logger.debug("Generating preview URL for document with ID: {}", id);
-        // TODO: Implement document preview URL generation
-        String previewUrl = "/api/v1/documents/" + id + "/preview";
-        logger.debug("Preview URL generated: {}", previewUrl);
-        return previewUrl;
+        Document document = documentRepository.findById(id)
+                .orElseThrow(() -> {
+                    logger.error("Document not found with ID: {}", id);
+                    return new RuntimeException("Document not found");
+                });
+        
+        if ("oss".equals(storageType)) {
+            // Generate a signed URL for OSS
+            URL signedUrl = ossService.generateSignedUrl(document.getFileName(), urlExpiration);
+            logger.debug("Signed URL generated for OSS: {}", signedUrl);
+            return signedUrl.toString();
+        } else {
+            // Return a local URL
+            String previewUrl = "/api/v1/documents/" + id + "/preview";
+            logger.debug("Preview URL generated: {}", previewUrl);
+            return previewUrl;
+        }
     }
 
     private DocumentDTO convertToDTO(Document document) {

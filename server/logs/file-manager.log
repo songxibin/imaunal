@@ -29501,3 +29501,2153 @@ java.lang.Exception: exception just for purpose of providing stack trace
     0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
     3125 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
+2025-04-06 16:53:29 [http-nio-8080-exec-10] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    13437500 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    13703208 nanoseconds spent preparing 2 JDBC statements;
+    21903667 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:29 [http-nio-8080-exec-10] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: s, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:29 [http-nio-8080-exec-1] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    29375 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    108042 nanoseconds spent preparing 2 JDBC statements;
+    22019249 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:29 [http-nio-8080-exec-1] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: sf, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:30 [http-nio-8080-exec-1] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:30 [http-nio-8080-exec-10] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:30 [http-nio-8080-exec-10] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    14706458 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    14891125 nanoseconds spent preparing 1 JDBC statements;
+    18884041 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:30 [http-nio-8080-exec-1] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    21584 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    614459 nanoseconds spent preparing 1 JDBC statements;
+    29122833 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:31 [http-nio-8080-exec-2] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    44877417 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    44982584 nanoseconds spent preparing 2 JDBC statements;
+    31416083 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:31 [http-nio-8080-exec-2] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: s, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:31 [http-nio-8080-exec-2] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:31 [http-nio-8080-exec-2] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    23250 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    69083 nanoseconds spent preparing 1 JDBC statements;
+    12012792 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:31 [http-nio-8080-exec-3] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    151125 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    795041 nanoseconds spent preparing 2 JDBC statements;
+    21525417 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:31 [http-nio-8080-exec-3] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: , sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:31 [http-nio-8080-exec-3] INFO  c.f.controller.DocumentController - Found 3 documents
+2025-04-06 16:53:31 [http-nio-8080-exec-3] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    14417 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    181458 nanoseconds spent preparing 5 JDBC statements;
+    57690625 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    8542 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:31 [http-nio-8080-exec-4] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    25541 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    143750 nanoseconds spent preparing 2 JDBC statements;
+    23589542 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:31 [http-nio-8080-exec-4] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: b, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:31 [http-nio-8080-exec-4] INFO  c.f.controller.DocumentController - Found 3 documents
+2025-04-06 16:53:32 [http-nio-8080-exec-4] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    20542 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    3782458 nanoseconds spent preparing 5 JDBC statements;
+    62807709 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:32 [http-nio-8080-exec-5] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    14012834 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    14272375 nanoseconds spent preparing 2 JDBC statements;
+    23957916 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:32 [http-nio-8080-exec-5] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: ba, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:32 [http-nio-8080-exec-5] INFO  c.f.controller.DocumentController - Found 2 documents
+2025-04-06 16:53:32 [http-nio-8080-exec-5] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    17250 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    253875 nanoseconds spent preparing 4 JDBC statements;
+    47531167 nanoseconds spent executing 4 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:32 [http-nio-8080-exec-6] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    12260750 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    12330500 nanoseconds spent preparing 2 JDBC statements;
+    21791334 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:32 [http-nio-8080-exec-6] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: ban, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:32 [http-nio-8080-exec-6] INFO  c.f.controller.DocumentController - Found 2 documents
+2025-04-06 16:53:32 [http-nio-8080-exec-6] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    22000 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    127376 nanoseconds spent preparing 4 JDBC statements;
+    48448084 nanoseconds spent executing 4 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:33 [http-nio-8080-exec-7] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    49292 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    176583 nanoseconds spent preparing 2 JDBC statements;
+    28004500 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:33 [http-nio-8080-exec-7] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: ba, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:33 [http-nio-8080-exec-7] INFO  c.f.controller.DocumentController - Found 2 documents
+2025-04-06 16:53:33 [http-nio-8080-exec-7] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    24166 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    157043 nanoseconds spent preparing 4 JDBC statements;
+    46224709 nanoseconds spent executing 4 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:33 [http-nio-8080-exec-8] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    23125 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    265709 nanoseconds spent preparing 2 JDBC statements;
+    26616875 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:33 [http-nio-8080-exec-8] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: b, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:33 [http-nio-8080-exec-8] INFO  c.f.controller.DocumentController - Found 3 documents
+2025-04-06 16:53:33 [http-nio-8080-exec-9] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    9999625 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    10049542 nanoseconds spent preparing 2 JDBC statements;
+    26191541 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:33 [http-nio-8080-exec-9] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: , sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:33 [http-nio-8080-exec-8] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    16750 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    152457 nanoseconds spent preparing 5 JDBC statements;
+    184862584 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:33 [http-nio-8080-exec-9] INFO  c.f.controller.DocumentController - Found 3 documents
+2025-04-06 16:53:33 [http-nio-8080-exec-9] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    14500 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    397376 nanoseconds spent preparing 5 JDBC statements;
+    69408543 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    2917 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:34 [http-nio-8080-exec-10] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    19546166 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    19804126 nanoseconds spent preparing 2 JDBC statements;
+    29070750 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:34 [http-nio-8080-exec-10] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: r, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:34 [http-nio-8080-exec-10] INFO  c.f.controller.DocumentController - Found 3 documents
+2025-04-06 16:53:34 [http-nio-8080-exec-1] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    11047625 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    11113667 nanoseconds spent preparing 2 JDBC statements;
+    21114042 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:34 [http-nio-8080-exec-1] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: re, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:34 [http-nio-8080-exec-10] WARN  c.zaxxer.hikari.pool.ProxyConnection - HikariPool-1 - Connection org.postgresql.jdbc.PgConnection@1f728b08 marked as broken because of SQLSTATE(08P01), ErrorCode(0)
+org.postgresql.util.PSQLException: ERROR: bind message supplies 1 parameters, but prepared statement "S_2" requires 0
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:134)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:246)
+	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:167)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.advanceNext(JdbcValuesResultSetImpl.java:218)
+	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.processNext(JdbcValuesResultSetImpl.java:98)
+	at org.hibernate.sql.results.jdbc.internal.AbstractJdbcValues.next(AbstractJdbcValues.java:19)
+	at org.hibernate.sql.results.internal.RowProcessingStateStandardImpl.next(RowProcessingStateStandardImpl.java:66)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:180)
+	at org.hibernate.sql.results.spi.ListResultsConsumer.consume(ListResultsConsumer.java:33)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:209)
+	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:83)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:76)
+	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:65)
+	at org.hibernate.loader.ast.internal.CollectionLoaderSingleKey.load(CollectionLoaderSingleKey.java:120)
+	at org.hibernate.persister.collection.AbstractCollectionPersister.initialize(AbstractCollectionPersister.java:680)
+	at org.hibernate.event.internal.DefaultInitializeCollectionEventListener.onInitializeCollection(DefaultInitializeCollectionEventListener.java:67)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.initializeCollection(SessionImpl.java:1692)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.lambda$initialize$3(AbstractPersistentCollection.java:615)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:264)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.initialize(AbstractPersistentCollection.java:613)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.read(AbstractPersistentCollection.java:136)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.lambda$readSize$0(AbstractPersistentCollection.java:162)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.withTemporarySessionIfNeeded(AbstractPersistentCollection.java:264)
+	at org.hibernate.collection.spi.AbstractPersistentCollection.readSize(AbstractPersistentCollection.java:148)
+	at org.hibernate.collection.spi.PersistentBag.size(PersistentBag.java:355)
+	at com.fasterxml.jackson.databind.ser.impl.StringCollectionSerializer.serialize(StringCollectionSerializer.java:70)
+	at com.fasterxml.jackson.databind.ser.impl.StringCollectionSerializer.serialize(StringCollectionSerializer.java:22)
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:732)
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:772)
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:178)
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serializeContents(IndexedListSerializer.java:119)
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:79)
+	at com.fasterxml.jackson.databind.ser.impl.IndexedListSerializer.serialize(IndexedListSerializer.java:18)
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:732)
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:772)
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:178)
+	at com.fasterxml.jackson.databind.ser.BeanPropertyWriter.serializeAsField(BeanPropertyWriter.java:732)
+	at com.fasterxml.jackson.databind.ser.std.BeanSerializerBase.serializeFields(BeanSerializerBase.java:772)
+	at com.fasterxml.jackson.databind.ser.BeanSerializer.serialize(BeanSerializer.java:178)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider._serialize(DefaultSerializerProvider.java:479)
+	at com.fasterxml.jackson.databind.ser.DefaultSerializerProvider.serializeValue(DefaultSerializerProvider.java:318)
+	at com.fasterxml.jackson.databind.ObjectWriter$Prefetch.serialize(ObjectWriter.java:1572)
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1061)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:483)
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:114)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:297)
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:245)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.filemanager.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:58)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-04-06 16:53:34 [http-nio-8080-exec-10] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08P01
+2025-04-06 16:53:34 [http-nio-8080-exec-10] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: bind message supplies 1 parameters, but prepared statement "S_2" requires 0
+2025-04-06 16:53:34 [http-nio-8080-exec-1] INFO  c.f.controller.DocumentController - Found 1 documents
+2025-04-06 16:53:34 [http-nio-8080-exec-10] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    14958 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    183416 nanoseconds spent preparing 3 JDBC statements;
+    62163793 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:34 [http-nio-8080-exec-1] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    31083 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    240125 nanoseconds spent preparing 3 JDBC statements;
+    45369542 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:34 [http-nio-8080-exec-2] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    23458 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    169458 nanoseconds spent preparing 2 JDBC statements;
+    24608042 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:34 [http-nio-8080-exec-2] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: rem, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:35 [http-nio-8080-exec-2] INFO  c.f.controller.DocumentController - Found 1 documents
+2025-04-06 16:53:35 [http-nio-8080-exec-2] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    20208 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    138168 nanoseconds spent preparing 3 JDBC statements;
+    35750333 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:35 [http-nio-8080-exec-3] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    23723458 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    23839041 nanoseconds spent preparing 2 JDBC statements;
+    29792667 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:35 [http-nio-8080-exec-3] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: re, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:35 [http-nio-8080-exec-3] INFO  c.f.controller.DocumentController - Found 1 documents
+2025-04-06 16:53:35 [http-nio-8080-exec-3] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    22125 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    123918 nanoseconds spent preparing 3 JDBC statements;
+    34326167 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:35 [http-nio-8080-exec-4] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    23458 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    100042 nanoseconds spent preparing 2 JDBC statements;
+    21176626 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:36 [http-nio-8080-exec-4] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: r, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:36 [http-nio-8080-exec-4] INFO  c.f.controller.DocumentController - Found 3 documents
+2025-04-06 16:53:36 [http-nio-8080-exec-4] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    21875 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    231542 nanoseconds spent preparing 5 JDBC statements;
+    53799874 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:36 [http-nio-8080-exec-5] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    31375 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    120833 nanoseconds spent preparing 2 JDBC statements;
+    22697125 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:36 [http-nio-8080-exec-5] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: , sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:36 [http-nio-8080-exec-5] INFO  c.f.controller.DocumentController - Found 3 documents
+2025-04-06 16:53:36 [http-nio-8080-exec-5] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    19750 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    214167 nanoseconds spent preparing 5 JDBC statements;
+    63034416 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    6750 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:37 [http-nio-8080-exec-6] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    20220584 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    20547875 nanoseconds spent preparing 2 JDBC statements;
+    23108167 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:37 [http-nio-8080-exec-6] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: r, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:37 [http-nio-8080-exec-6] INFO  c.f.controller.DocumentController - Found 3 documents
+2025-04-06 16:53:37 [http-nio-8080-exec-7] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    12346334 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    15774126 nanoseconds spent preparing 2 JDBC statements;
+    34008166 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:37 [http-nio-8080-exec-7] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: re, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:37 [http-nio-8080-exec-6] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    27875 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    368626 nanoseconds spent preparing 5 JDBC statements;
+    79687083 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:37 [http-nio-8080-exec-7] INFO  c.f.controller.DocumentController - Found 1 documents
+2025-04-06 16:53:37 [http-nio-8080-exec-7] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    17708 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    710500 nanoseconds spent preparing 3 JDBC statements;
+    37950333 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:37 [http-nio-8080-exec-8] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    20208 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    73417 nanoseconds spent preparing 2 JDBC statements;
+    21469501 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:37 [http-nio-8080-exec-8] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: rem, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:37 [http-nio-8080-exec-8] INFO  c.f.controller.DocumentController - Found 1 documents
+2025-04-06 16:53:37 [http-nio-8080-exec-8] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    17000 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    93374 nanoseconds spent preparing 3 JDBC statements;
+    48771334 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:38 [http-nio-8080-exec-9] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    12627084 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    12869459 nanoseconds spent preparing 2 JDBC statements;
+    23389459 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:38 [http-nio-8080-exec-9] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remt, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:38 [http-nio-8080-exec-9] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:38 [http-nio-8080-exec-9] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    23416 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    68625 nanoseconds spent preparing 1 JDBC statements;
+    10862500 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:38 [http-nio-8080-exec-10] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    58708 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    193999 nanoseconds spent preparing 2 JDBC statements;
+    22543499 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:38 [http-nio-8080-exec-10] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remte, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:38 [http-nio-8080-exec-10] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:38 [http-nio-8080-exec-10] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    29500 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    82792 nanoseconds spent preparing 1 JDBC statements;
+    10761750 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:39 [http-nio-8080-exec-1] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    14120709 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    14307750 nanoseconds spent preparing 2 JDBC statements;
+    24779542 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:40 [http-nio-8080-exec-1] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remt, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:40 [http-nio-8080-exec-1] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:40 [http-nio-8080-exec-1] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    67917 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    189959 nanoseconds spent preparing 1 JDBC statements;
+    14745125 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:40 [http-nio-8080-exec-2] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    54917 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    232708 nanoseconds spent preparing 2 JDBC statements;
+    33338250 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:40 [http-nio-8080-exec-2] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: rem, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:40 [http-nio-8080-exec-2] INFO  c.f.controller.DocumentController - Found 1 documents
+2025-04-06 16:53:40 [http-nio-8080-exec-2] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    25500 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    149668 nanoseconds spent preparing 3 JDBC statements;
+    42342417 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:41 [http-nio-8080-exec-3] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    22418500 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    22651917 nanoseconds spent preparing 2 JDBC statements;
+    23859791 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:41 [http-nio-8080-exec-3] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remo, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:41 [http-nio-8080-exec-3] INFO  c.f.controller.DocumentController - Found 1 documents
+2025-04-06 16:53:41 [http-nio-8080-exec-3] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    97125 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    487249 nanoseconds spent preparing 3 JDBC statements;
+    35797791 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:41 [http-nio-8080-exec-4] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    16821500 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    16977084 nanoseconds spent preparing 2 JDBC statements;
+    24292083 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:41 [http-nio-8080-exec-4] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: rem, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:41 [http-nio-8080-exec-4] INFO  c.f.controller.DocumentController - Found 1 documents
+2025-04-06 16:53:41 [http-nio-8080-exec-4] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    35542 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    129875 nanoseconds spent preparing 3 JDBC statements;
+    35863042 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:42 [http-nio-8080-exec-5] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    22167 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    108334 nanoseconds spent preparing 2 JDBC statements;
+    20755292 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:42 [http-nio-8080-exec-5] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remt, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:42 [http-nio-8080-exec-5] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:42 [http-nio-8080-exec-5] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    24000 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    73042 nanoseconds spent preparing 1 JDBC statements;
+    9985334 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:43 [http-nio-8080-exec-6] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    19334167 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    19454458 nanoseconds spent preparing 2 JDBC statements;
+    25789000 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:43 [http-nio-8080-exec-6] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remte, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:43 [http-nio-8080-exec-6] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:43 [http-nio-8080-exec-6] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    34250 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    76750 nanoseconds spent preparing 1 JDBC statements;
+    11613208 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:43 [http-nio-8080-exec-7] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    15391042 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    15475209 nanoseconds spent preparing 2 JDBC statements;
+    24230626 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:43 [http-nio-8080-exec-7] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remter, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:43 [http-nio-8080-exec-7] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:43 [http-nio-8080-exec-7] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    22250 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    198333 nanoseconds spent preparing 1 JDBC statements;
+    11471709 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:44 [http-nio-8080-exec-8] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    21016958 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    21522667 nanoseconds spent preparing 2 JDBC statements;
+    23941083 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:44 [http-nio-8080-exec-8] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remtera, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:44 [http-nio-8080-exec-8] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:44 [http-nio-8080-exec-8] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    24167 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    74083 nanoseconds spent preparing 1 JDBC statements;
+    16517875 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:44 [http-nio-8080-exec-9] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    19042 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    120499 nanoseconds spent preparing 2 JDBC statements;
+    33898416 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:44 [http-nio-8080-exec-9] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remteras, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:44 [http-nio-8080-exec-9] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:44 [http-nio-8080-exec-9] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    15750 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    53375 nanoseconds spent preparing 1 JDBC statements;
+    12653375 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:44 [http-nio-8080-exec-10] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    69750 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    274791 nanoseconds spent preparing 2 JDBC statements;
+    31087791 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:44 [http-nio-8080-exec-10] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remterasd, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:44 [http-nio-8080-exec-10] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:44 [http-nio-8080-exec-10] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    39875 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    122834 nanoseconds spent preparing 1 JDBC statements;
+    11422291 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:44 [http-nio-8080-exec-1] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    21125 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    113500 nanoseconds spent preparing 2 JDBC statements;
+    23098500 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:44 [http-nio-8080-exec-1] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remterasds, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:44 [http-nio-8080-exec-1] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:44 [http-nio-8080-exec-1] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    17750 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    56417 nanoseconds spent preparing 1 JDBC statements;
+    11615583 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:45 [http-nio-8080-exec-2] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    23458 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    177000 nanoseconds spent preparing 2 JDBC statements;
+    25641750 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:45 [http-nio-8080-exec-2] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remterasd, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:45 [http-nio-8080-exec-2] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:45 [http-nio-8080-exec-2] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    18875 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    60542 nanoseconds spent preparing 1 JDBC statements;
+    11676375 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:45 [http-nio-8080-exec-3] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    25041 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    375874 nanoseconds spent preparing 2 JDBC statements;
+    28343583 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:45 [http-nio-8080-exec-3] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remteras, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:45 [http-nio-8080-exec-3] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:45 [http-nio-8080-exec-3] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    26292 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    397458 nanoseconds spent preparing 1 JDBC statements;
+    11707417 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:45 [http-nio-8080-exec-4] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    36917 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    489417 nanoseconds spent preparing 2 JDBC statements;
+    24091958 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:45 [http-nio-8080-exec-4] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remtera, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:45 [http-nio-8080-exec-4] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:45 [http-nio-8080-exec-4] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    26792 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    162375 nanoseconds spent preparing 1 JDBC statements;
+    11421958 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:45 [http-nio-8080-exec-5] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    45083 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    203792 nanoseconds spent preparing 2 JDBC statements;
+    27576416 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:45 [http-nio-8080-exec-5] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remter, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:45 [http-nio-8080-exec-5] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:45 [http-nio-8080-exec-5] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    23625 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    77667 nanoseconds spent preparing 1 JDBC statements;
+    14746417 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:46 [http-nio-8080-exec-6] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    29125 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    120666 nanoseconds spent preparing 2 JDBC statements;
+    23897791 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:46 [http-nio-8080-exec-6] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remte, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:46 [http-nio-8080-exec-6] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:46 [http-nio-8080-exec-6] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    23417 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    127042 nanoseconds spent preparing 1 JDBC statements;
+    12258917 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:46 [http-nio-8080-exec-7] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    12488709 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    12605709 nanoseconds spent preparing 2 JDBC statements;
+    24142292 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:46 [http-nio-8080-exec-7] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: remt, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:46 [http-nio-8080-exec-7] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 16:53:46 [http-nio-8080-exec-7] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    23833 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    257375 nanoseconds spent preparing 1 JDBC statements;
+    15743458 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:46 [http-nio-8080-exec-8] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    101291 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    547500 nanoseconds spent preparing 2 JDBC statements;
+    32698334 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:46 [http-nio-8080-exec-8] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: rem, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:46 [http-nio-8080-exec-8] INFO  c.f.controller.DocumentController - Found 1 documents
+2025-04-06 16:53:46 [http-nio-8080-exec-8] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    20208 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    117917 nanoseconds spent preparing 3 JDBC statements;
+    32304000 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:46 [http-nio-8080-exec-9] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    21250 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    107959 nanoseconds spent preparing 2 JDBC statements;
+    21545375 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:46 [http-nio-8080-exec-9] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: re, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:46 [http-nio-8080-exec-9] INFO  c.f.controller.DocumentController - Found 1 documents
+2025-04-06 16:53:46 [http-nio-8080-exec-9] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    16375 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    104458 nanoseconds spent preparing 3 JDBC statements;
+    31284125 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:46 [http-nio-8080-exec-10] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    23625 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    97209 nanoseconds spent preparing 2 JDBC statements;
+    23808374 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:46 [http-nio-8080-exec-10] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: r, sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:46 [http-nio-8080-exec-10] INFO  c.f.controller.DocumentController - Found 3 documents
+2025-04-06 16:53:47 [http-nio-8080-exec-10] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    20875 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    180750 nanoseconds spent preparing 5 JDBC statements;
+    58221875 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:47 [http-nio-8080-exec-1] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    20388000 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    20628916 nanoseconds spent preparing 2 JDBC statements;
+    24962083 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:47 [http-nio-8080-exec-1] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: , sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:47 [http-nio-8080-exec-1] INFO  c.f.controller.DocumentController - Found 3 documents
+2025-04-06 16:53:47 [http-nio-8080-exec-1] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    35000 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    1251874 nanoseconds spent preparing 5 JDBC statements;
+    67843167 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    5208 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:53 [http-nio-8080-exec-2] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    20974750 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    21314750 nanoseconds spent preparing 2 JDBC statements;
+    21369834 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:53 [http-nio-8080-exec-2] INFO  c.f.controller.DocumentController - Getting document with ID: 4
+2025-04-06 16:53:53 [http-nio-8080-exec-2] INFO  c.f.controller.DocumentController - Document found: 4
+2025-04-06 16:53:53 [http-nio-8080-exec-2] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    17333 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    461251 nanoseconds spent preparing 3 JDBC statements;
+    34176501 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:55 [http-nio-8080-exec-3] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    17065500 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    17153375 nanoseconds spent preparing 2 JDBC statements;
+    22473000 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:53:55 [http-nio-8080-exec-3] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: , sortBy: createdAt, sortOrder: desc
+2025-04-06 16:53:56 [http-nio-8080-exec-3] INFO  c.f.controller.DocumentController - Found 3 documents
+2025-04-06 16:53:56 [http-nio-8080-exec-3] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    19250 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    274708 nanoseconds spent preparing 5 JDBC statements;
+    60594167 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    6500 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:55:31 [http-nio-8080-exec-4] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    17138541 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    17575166 nanoseconds spent preparing 2 JDBC statements;
+    26886208 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:55:32 [http-nio-8080-exec-4] INFO  c.f.controller.DocumentController - Uploading document: test1.txt, size: 459
+2025-04-06 16:55:32 [http-nio-8080-exec-4] INFO  c.f.service.impl.DocumentServiceImpl - Document saved to database with ID: 5
+2025-04-06 16:55:32 [http-nio-8080-exec-4] INFO  c.f.controller.DocumentController - Document uploaded successfully: 5
+2025-04-06 16:55:32 [http-nio-8080-exec-4] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    16833 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    2628874 nanoseconds spent preparing 4 JDBC statements;
+    45109458 nanoseconds spent executing 4 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    911583 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 1 collections);
+    12064459 nanoseconds spent executing 2 partial-flushes (flushing a total of 1 entities and 1 collections)
+}
+2025-04-06 16:55:32 [http-nio-8080-exec-5] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    22625 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    1007875 nanoseconds spent preparing 2 JDBC statements;
+    24155625 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:55:32 [http-nio-8080-exec-5] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: , sortBy: createdAt, sortOrder: desc
+2025-04-06 16:55:32 [http-nio-8080-exec-5] INFO  c.f.controller.DocumentController - Found 4 documents
+2025-04-06 16:55:32 [http-nio-8080-exec-5] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    30750 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    1118625 nanoseconds spent preparing 6 JDBC statements;
+    87839043 nanoseconds spent executing 6 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    2875 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:14 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-06 16:59:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-06 16:59:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-06 16:59:25 [main] INFO  c.filemanager.FileManagerApplication - Starting FileManagerApplication using Java 17.0.12 with PID 27109 (/Users/xibinsong/Documents/Github/imaunal/server/target/classes started by xibinsong in /Users/xibinsong/Documents/Github/imaunal/server)
+2025-04-06 16:59:25 [main] INFO  c.filemanager.FileManagerApplication - The following 1 profile is active: "dev"
+2025-04-06 16:59:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-06 16:59:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 95 ms. Found 2 JPA repository interfaces.
+2025-04-06 16:59:28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-06 16:59:28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-06 16:59:28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2025-04-06 16:59:28 [main] INFO  o.a.c.c.C.[.[localhost].[/api/v1] - Initializing Spring embedded WebApplicationContext
+2025-04-06 16:59:28 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3353 ms
+2025-04-06 16:59:29 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-06 16:59:29 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-04-06 16:59:29 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-06 16:59:29 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-06 16:59:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-06 16:59:29 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6728370a
+2025-04-06 16:59:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-06 16:59:30 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-06 16:59:31 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-06 16:59:31 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:31 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:32 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:32 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:32 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:32 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:32 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:32 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:32 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:32 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:32 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:32 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:32 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:32 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:32 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:32 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-04-06 16:59:33 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:33 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:33 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:33 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:33 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-06 16:59:34 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@54c3b0dd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c40ae2d, org.springframework.security.web.context.SecurityContextHolderFilter@7ce87f9d, org.springframework.security.web.header.HeaderWriterFilter@14426256, org.springframework.web.filter.CorsFilter@d0c3793, org.springframework.security.web.authentication.logout.LogoutFilter@15c46930, com.filemanager.security.JwtAuthenticationFilter@279e85eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c89cec5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1447bef2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@283c6f00, org.springframework.security.web.session.SessionManagementFilter@5d55eb7a, org.springframework.security.web.access.ExceptionTranslationFilter@3662dc9b, org.springframework.security.web.access.intercept.AuthorizationFilter@34018757]
+2025-04-06 16:59:34 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/api/v1'
+2025-04-06 16:59:34 [main] INFO  c.filemanager.FileManagerApplication - Started FileManagerApplication in 10.332 seconds (process running for 11.047)
+2025-04-06 16:59:49 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api/v1] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-06 16:59:49 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-06 16:59:49 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 19 ms
+2025-04-06 16:59:50 [http-nio-8080-exec-1] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    25739458 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    26247374 nanoseconds spent preparing 2 JDBC statements;
+    25419833 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:50 [http-nio-8080-exec-1] INFO  c.f.controller.DocumentController - Uploading document: test2.txt, size: 459
+2025-04-06 16:59:50 [http-nio-8080-exec-1] INFO  c.f.service.impl.OssServiceImpl - File uploaded successfully to OSS: documents/b79cc5c6-a192-4169-ad30-2f103c9bba45_test2.txt
+2025-04-06 16:59:50 [http-nio-8080-exec-1] INFO  c.f.service.impl.DocumentServiceImpl - Document saved to database with ID: 6
+2025-04-06 16:59:50 [http-nio-8080-exec-1] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/b79cc5c6-a192-4169-ad30-2f103c9bba45_test2.txt
+2025-04-06 16:59:50 [http-nio-8080-exec-1] INFO  c.f.controller.DocumentController - Document uploaded successfully: 6
+2025-04-06 16:59:50 [http-nio-8080-exec-1] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    25792 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    1060708 nanoseconds spent preparing 4 JDBC statements;
+    51440833 nanoseconds spent executing 4 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    1313208 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 1 collections);
+    7933542 nanoseconds spent executing 2 partial-flushes (flushing a total of 1 entities and 1 collections)
+}
+2025-04-06 16:59:50 [http-nio-8080-exec-2] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    51834 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    185458 nanoseconds spent preparing 2 JDBC statements;
+    20641541 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 16:59:50 [http-nio-8080-exec-2] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: , sortBy: createdAt, sortOrder: desc
+2025-04-06 16:59:50 [http-nio-8080-exec-2] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/b79cc5c6-a192-4169-ad30-2f103c9bba45_test2.txt
+2025-04-06 16:59:50 [http-nio-8080-exec-2] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/58cec412-37e0-4979-8b64-764b3e46547a_test1.txt
+2025-04-06 16:59:50 [http-nio-8080-exec-2] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/7f39de26-22cf-42ad-a3b0-c6a7e3e3712f_banner.txt
+2025-04-06 16:59:50 [http-nio-8080-exec-2] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/951211bf-0f6c-4997-b311-1c829e414817_banner.txt
+2025-04-06 16:59:50 [http-nio-8080-exec-2] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/e6527d87-496c-471a-9b44-d5a94bebee51_remote-annoyed-bonobo.pdf
+2025-04-06 16:59:50 [http-nio-8080-exec-2] INFO  c.f.controller.DocumentController - Found 5 documents
+2025-04-06 16:59:51 [http-nio-8080-exec-2] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    17083 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    539582 nanoseconds spent preparing 7 JDBC statements;
+    77577209 nanoseconds spent executing 7 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    3959 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:06 [http-nio-8080-exec-3] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    21172666 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    21350250 nanoseconds spent preparing 2 JDBC statements;
+    24433334 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:06 [http-nio-8080-exec-3] INFO  c.f.controller.DocumentController - Deleting document with ID: 6
+2025-04-06 17:00:06 [http-nio-8080-exec-3] INFO  c.f.service.impl.OssServiceImpl - File deleted successfully from OSS: documents/b79cc5c6-a192-4169-ad30-2f103c9bba45_test2.txt
+2025-04-06 17:00:06 [http-nio-8080-exec-3] INFO  c.f.service.impl.DocumentServiceImpl - Document deleted from database: 6
+2025-04-06 17:00:06 [http-nio-8080-exec-3] INFO  c.f.controller.DocumentController - Document deleted successfully: 6
+2025-04-06 17:00:06 [http-nio-8080-exec-3] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    16042 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    292960 nanoseconds spent preparing 3 JDBC statements;
+    10879458 nanoseconds spent executing 1 JDBC statements;
+    32239000 nanoseconds spent executing 2 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    53797875 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:06 [http-nio-8080-exec-4] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    18333 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    70209 nanoseconds spent preparing 2 JDBC statements;
+    22012083 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:06 [http-nio-8080-exec-4] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: , sortBy: createdAt, sortOrder: desc
+2025-04-06 17:00:06 [http-nio-8080-exec-4] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/58cec412-37e0-4979-8b64-764b3e46547a_test1.txt
+2025-04-06 17:00:06 [http-nio-8080-exec-4] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/7f39de26-22cf-42ad-a3b0-c6a7e3e3712f_banner.txt
+2025-04-06 17:00:06 [http-nio-8080-exec-4] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/951211bf-0f6c-4997-b311-1c829e414817_banner.txt
+2025-04-06 17:00:06 [http-nio-8080-exec-4] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/e6527d87-496c-471a-9b44-d5a94bebee51_remote-annoyed-bonobo.pdf
+2025-04-06 17:00:06 [http-nio-8080-exec-4] INFO  c.f.controller.DocumentController - Found 4 documents
+2025-04-06 17:00:06 [http-nio-8080-exec-4] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    22917 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    475917 nanoseconds spent preparing 6 JDBC statements;
+    62055208 nanoseconds spent executing 6 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    5125 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:13 [http-nio-8080-exec-5] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    18295792 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    18377293 nanoseconds spent preparing 2 JDBC statements;
+    22498625 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:13 [http-nio-8080-exec-5] INFO  c.f.controller.DocumentController - Deleting document with ID: 1
+2025-04-06 17:00:13 [http-nio-8080-exec-5] INFO  c.f.service.impl.OssServiceImpl - File deleted successfully from OSS: documents/e6527d87-496c-471a-9b44-d5a94bebee51_remote-annoyed-bonobo.pdf
+2025-04-06 17:00:13 [http-nio-8080-exec-5] INFO  c.f.service.impl.DocumentServiceImpl - Document deleted from database: 1
+2025-04-06 17:00:13 [http-nio-8080-exec-5] INFO  c.f.controller.DocumentController - Document deleted successfully: 1
+2025-04-06 17:00:13 [http-nio-8080-exec-5] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    20417 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    116917 nanoseconds spent preparing 3 JDBC statements;
+    13520250 nanoseconds spent executing 1 JDBC statements;
+    20403292 nanoseconds spent executing 2 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    21980834 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:14 [http-nio-8080-exec-6] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    20959 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    168709 nanoseconds spent preparing 2 JDBC statements;
+    21196334 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:14 [http-nio-8080-exec-6] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: , sortBy: createdAt, sortOrder: desc
+2025-04-06 17:00:14 [http-nio-8080-exec-6] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/58cec412-37e0-4979-8b64-764b3e46547a_test1.txt
+2025-04-06 17:00:14 [http-nio-8080-exec-6] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/7f39de26-22cf-42ad-a3b0-c6a7e3e3712f_banner.txt
+2025-04-06 17:00:14 [http-nio-8080-exec-6] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/951211bf-0f6c-4997-b311-1c829e414817_banner.txt
+2025-04-06 17:00:14 [http-nio-8080-exec-6] INFO  c.f.controller.DocumentController - Found 3 documents
+2025-04-06 17:00:14 [http-nio-8080-exec-6] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    15041 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    158041 nanoseconds spent preparing 5 JDBC statements;
+    53770042 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    3334 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:16 [http-nio-8080-exec-7] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    16029084 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    16193167 nanoseconds spent preparing 2 JDBC statements;
+    25486126 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:16 [http-nio-8080-exec-7] INFO  c.f.controller.DocumentController - Deleting document with ID: 3
+2025-04-06 17:00:16 [http-nio-8080-exec-7] INFO  c.f.service.impl.OssServiceImpl - File deleted successfully from OSS: documents/951211bf-0f6c-4997-b311-1c829e414817_banner.txt
+2025-04-06 17:00:16 [http-nio-8080-exec-7] INFO  c.f.service.impl.DocumentServiceImpl - Document deleted from database: 3
+2025-04-06 17:00:16 [http-nio-8080-exec-7] INFO  c.f.controller.DocumentController - Document deleted successfully: 3
+2025-04-06 17:00:16 [http-nio-8080-exec-7] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    21833 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    161916 nanoseconds spent preparing 3 JDBC statements;
+    12061917 nanoseconds spent executing 1 JDBC statements;
+    19621750 nanoseconds spent executing 2 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    21163250 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:17 [http-nio-8080-exec-8] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    35417 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    131166 nanoseconds spent preparing 2 JDBC statements;
+    28319708 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:17 [http-nio-8080-exec-8] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: , sortBy: createdAt, sortOrder: desc
+2025-04-06 17:00:17 [http-nio-8080-exec-8] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/58cec412-37e0-4979-8b64-764b3e46547a_test1.txt
+2025-04-06 17:00:17 [http-nio-8080-exec-8] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/7f39de26-22cf-42ad-a3b0-c6a7e3e3712f_banner.txt
+2025-04-06 17:00:17 [http-nio-8080-exec-8] INFO  c.f.controller.DocumentController - Found 2 documents
+2025-04-06 17:00:17 [http-nio-8080-exec-8] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    21000 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    152708 nanoseconds spent preparing 4 JDBC statements;
+    45081958 nanoseconds spent executing 4 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    5791 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:19 [http-nio-8080-exec-9] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    10217667 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    10298542 nanoseconds spent preparing 2 JDBC statements;
+    21822083 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:19 [http-nio-8080-exec-9] INFO  c.f.controller.DocumentController - Deleting document with ID: 4
+2025-04-06 17:00:19 [http-nio-8080-exec-9] INFO  c.f.service.impl.OssServiceImpl - File deleted successfully from OSS: documents/7f39de26-22cf-42ad-a3b0-c6a7e3e3712f_banner.txt
+2025-04-06 17:00:19 [http-nio-8080-exec-9] INFO  c.f.service.impl.DocumentServiceImpl - Document deleted from database: 4
+2025-04-06 17:00:19 [http-nio-8080-exec-9] INFO  c.f.controller.DocumentController - Document deleted successfully: 4
+2025-04-06 17:00:19 [http-nio-8080-exec-9] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    25250 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    179208 nanoseconds spent preparing 3 JDBC statements;
+    10717917 nanoseconds spent executing 1 JDBC statements;
+    22278541 nanoseconds spent executing 2 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    24624125 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:19 [http-nio-8080-exec-10] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    38458 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    157875 nanoseconds spent preparing 2 JDBC statements;
+    23608916 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:19 [http-nio-8080-exec-10] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: , sortBy: createdAt, sortOrder: desc
+2025-04-06 17:00:19 [http-nio-8080-exec-10] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/58cec412-37e0-4979-8b64-764b3e46547a_test1.txt
+2025-04-06 17:00:19 [http-nio-8080-exec-10] INFO  c.f.controller.DocumentController - Found 1 documents
+2025-04-06 17:00:19 [http-nio-8080-exec-10] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    29250 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    117541 nanoseconds spent preparing 3 JDBC statements;
+    31322166 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    4167 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:21 [http-nio-8080-exec-1] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    11598000 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    11779374 nanoseconds spent preparing 2 JDBC statements;
+    24375417 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:21 [http-nio-8080-exec-1] INFO  c.f.controller.DocumentController - Deleting document with ID: 5
+2025-04-06 17:00:21 [http-nio-8080-exec-1] INFO  c.f.service.impl.OssServiceImpl - File deleted successfully from OSS: documents/58cec412-37e0-4979-8b64-764b3e46547a_test1.txt
+2025-04-06 17:00:21 [http-nio-8080-exec-1] INFO  c.f.service.impl.DocumentServiceImpl - Document deleted from database: 5
+2025-04-06 17:00:21 [http-nio-8080-exec-1] INFO  c.f.controller.DocumentController - Document deleted successfully: 5
+2025-04-06 17:00:21 [http-nio-8080-exec-1] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    22084 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    201416 nanoseconds spent preparing 3 JDBC statements;
+    13250416 nanoseconds spent executing 1 JDBC statements;
+    20879375 nanoseconds spent executing 2 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    23701750 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:21 [http-nio-8080-exec-2] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    32541 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    210917 nanoseconds spent preparing 2 JDBC statements;
+    26494458 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:21 [http-nio-8080-exec-2] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: , sortBy: createdAt, sortOrder: desc
+2025-04-06 17:00:21 [http-nio-8080-exec-2] INFO  c.f.controller.DocumentController - Found 0 documents
+2025-04-06 17:00:21 [http-nio-8080-exec-2] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    26333 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    44208 nanoseconds spent preparing 1 JDBC statements;
+    10715875 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    4875 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:30 [http-nio-8080-exec-3] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    16641208 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    16808208 nanoseconds spent preparing 2 JDBC statements;
+    24411834 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:30 [http-nio-8080-exec-3] INFO  c.f.controller.DocumentController - Uploading document: test1.txt, size: 459
+2025-04-06 17:00:30 [http-nio-8080-exec-3] INFO  c.f.service.impl.OssServiceImpl - File uploaded successfully to OSS: documents/a090c3cd-9e50-4dda-adcf-a28dc8c1d75d_test1.txt
+2025-04-06 17:00:30 [http-nio-8080-exec-3] INFO  c.f.service.impl.DocumentServiceImpl - Document saved to database with ID: 7
+2025-04-06 17:00:30 [http-nio-8080-exec-3] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/a090c3cd-9e50-4dda-adcf-a28dc8c1d75d_test1.txt
+2025-04-06 17:00:30 [http-nio-8080-exec-3] INFO  c.f.controller.DocumentController - Document uploaded successfully: 7
+2025-04-06 17:00:30 [http-nio-8080-exec-3] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    18167 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    775041 nanoseconds spent preparing 4 JDBC statements;
+    43665999 nanoseconds spent executing 4 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    401750 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 1 collections);
+    566375 nanoseconds spent executing 2 partial-flushes (flushing a total of 1 entities and 1 collections)
+}
+2025-04-06 17:00:30 [http-nio-8080-exec-4] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    31292 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    166542 nanoseconds spent preparing 2 JDBC statements;
+    21797667 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:30 [http-nio-8080-exec-4] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: , sortBy: createdAt, sortOrder: desc
+2025-04-06 17:00:30 [http-nio-8080-exec-4] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/a090c3cd-9e50-4dda-adcf-a28dc8c1d75d_test1.txt
+2025-04-06 17:00:30 [http-nio-8080-exec-4] INFO  c.f.controller.DocumentController - Found 1 documents
+2025-04-06 17:00:30 [http-nio-8080-exec-4] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    68958 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    147666 nanoseconds spent preparing 3 JDBC statements;
+    31666334 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    5000 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:32 [http-nio-8080-exec-5] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    18393375 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    18508666 nanoseconds spent preparing 2 JDBC statements;
+    22327875 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:32 [http-nio-8080-exec-5] INFO  c.f.controller.DocumentController - Uploading document: test2.txt, size: 459
+2025-04-06 17:00:32 [http-nio-8080-exec-5] INFO  c.f.service.impl.OssServiceImpl - File uploaded successfully to OSS: documents/188827b7-7263-4a54-8214-656b40be962b_test2.txt
+2025-04-06 17:00:32 [http-nio-8080-exec-5] INFO  c.f.service.impl.DocumentServiceImpl - Document saved to database with ID: 8
+2025-04-06 17:00:32 [http-nio-8080-exec-5] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/188827b7-7263-4a54-8214-656b40be962b_test2.txt
+2025-04-06 17:00:32 [http-nio-8080-exec-5] INFO  c.f.controller.DocumentController - Document uploaded successfully: 8
+2025-04-06 17:00:32 [http-nio-8080-exec-5] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    25917 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    221126 nanoseconds spent preparing 4 JDBC statements;
+    40802794 nanoseconds spent executing 4 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    501500 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 1 collections);
+    458375 nanoseconds spent executing 2 partial-flushes (flushing a total of 1 entities and 1 collections)
+}
+2025-04-06 17:00:33 [http-nio-8080-exec-6] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    31917 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    672584 nanoseconds spent preparing 2 JDBC statements;
+    24869125 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:33 [http-nio-8080-exec-6] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: , sortBy: createdAt, sortOrder: desc
+2025-04-06 17:00:33 [http-nio-8080-exec-6] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/188827b7-7263-4a54-8214-656b40be962b_test2.txt
+2025-04-06 17:00:33 [http-nio-8080-exec-6] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/a090c3cd-9e50-4dda-adcf-a28dc8c1d75d_test1.txt
+2025-04-06 17:00:33 [http-nio-8080-exec-6] INFO  c.f.controller.DocumentController - Found 2 documents
+2025-04-06 17:00:33 [http-nio-8080-exec-6] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    19750 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    215792 nanoseconds spent preparing 4 JDBC statements;
+    41150626 nanoseconds spent executing 4 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    4000 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:42 [http-nio-8080-exec-7] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    14655292 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    14890167 nanoseconds spent preparing 2 JDBC statements;
+    19380958 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:42 [http-nio-8080-exec-7] INFO  c.f.controller.DocumentController - Uploading document: banner.txt, size: 459
+2025-04-06 17:00:42 [http-nio-8080-exec-7] INFO  c.f.service.impl.OssServiceImpl - File uploaded successfully to OSS: documents/fd4dfbf4-98d5-40ce-941e-a1a21d529e90_banner.txt
+2025-04-06 17:00:42 [http-nio-8080-exec-7] INFO  c.f.service.impl.DocumentServiceImpl - Document saved to database with ID: 9
+2025-04-06 17:00:42 [http-nio-8080-exec-7] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/fd4dfbf4-98d5-40ce-941e-a1a21d529e90_banner.txt
+2025-04-06 17:00:42 [http-nio-8080-exec-7] INFO  c.f.controller.DocumentController - Document uploaded successfully: 9
+2025-04-06 17:00:42 [http-nio-8080-exec-7] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    20125 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    171166 nanoseconds spent preparing 4 JDBC statements;
+    40397293 nanoseconds spent executing 4 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    292500 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 1 collections);
+    621458 nanoseconds spent executing 2 partial-flushes (flushing a total of 1 entities and 1 collections)
+}
+2025-04-06 17:00:42 [http-nio-8080-exec-8] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    28667 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    191542 nanoseconds spent preparing 2 JDBC statements;
+    23404708 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:00:42 [http-nio-8080-exec-8] INFO  c.f.controller.DocumentController - Getting documents - page: 0, size: 10, keyword: , sortBy: createdAt, sortOrder: desc
+2025-04-06 17:00:42 [http-nio-8080-exec-8] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/fd4dfbf4-98d5-40ce-941e-a1a21d529e90_banner.txt
+2025-04-06 17:00:42 [http-nio-8080-exec-8] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/188827b7-7263-4a54-8214-656b40be962b_test2.txt
+2025-04-06 17:00:42 [http-nio-8080-exec-8] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/a090c3cd-9e50-4dda-adcf-a28dc8c1d75d_test1.txt
+2025-04-06 17:00:42 [http-nio-8080-exec-8] INFO  c.f.controller.DocumentController - Found 3 documents
+2025-04-06 17:00:42 [http-nio-8080-exec-8] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    15833 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    232290 nanoseconds spent preparing 5 JDBC statements;
+    53305041 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    5458 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:01:08 [http-nio-8080-exec-9] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    18171917 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    18384458 nanoseconds spent preparing 2 JDBC statements;
+    23094417 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-04-06 17:01:08 [http-nio-8080-exec-9] INFO  c.f.controller.DocumentController - Getting document with ID: 9
+2025-04-06 17:01:08 [http-nio-8080-exec-9] INFO  c.f.service.impl.OssServiceImpl - Signed URL generated successfully for OSS object: documents/fd4dfbf4-98d5-40ce-941e-a1a21d529e90_banner.txt
+2025-04-06 17:01:08 [http-nio-8080-exec-9] INFO  c.f.controller.DocumentController - Document found: 9
+2025-04-06 17:01:08 [http-nio-8080-exec-9] INFO  o.h.e.i.StatisticalLoggingSessionEventListener - Session Metrics {
+    18750 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    221625 nanoseconds spent preparing 3 JDBC statements;
+    37190167 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
