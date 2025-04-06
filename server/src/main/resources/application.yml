@@ -13,7 +13,7 @@ spring:
     username: postgres.xmrsuhinbitsuwpncndq
     password: i5+cwb&wB7Srzjq
     driver-class-name: org.postgresql.Driver
-  
+
   # JPA Configuration
   jpa:
     hibernate:
@@ -23,6 +23,15 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          batch_size: 50
+          batch_versioned_data: true
+        order_inserts: true
+        order_updates: true
+        generate_statistics: true
+        connection:
+          provider_disables_autocommit: false
+        current_session_context_class: thread
   
   # File Upload Configuration
   servlet:
@@ -49,4 +58,19 @@ springdoc:
     path: /api-docs
   swagger-ui:
     path: /swagger-ui.html
-    operationsSorter: method 
+    operationsSorter: method
+
+# Logging Configuration
+logging:
+  level:
+    root: DEBUG
+    com.filemanager: DEBUG
+    org.springframework.web: INFO
+    org.hibernate: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/file-manager.log
+    max-size: 10MB
+    max-history: 30 

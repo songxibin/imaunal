@@ -167,13 +167,19 @@ const fetchDocuments = async () => {
       size: pageSize.value,
       keyword: searchKeyword.value
     })
-    if (response.code === 200) {
-      documents.value = response.data.items
-      total.value = response.data.total
+    console.log('API Response:', response)
+    
+    // 检查响应结构
+    if (response && response.code === 200 && response.data) {
+      documents.value = response.data.items || []
+      total.value = response.data.total || 0
+      console.log('Documents loaded:', documents.value)
     } else {
-      ElMessage.error(response.message || '获取文档列表失败')
+      console.error('Invalid response format:', response)
+      ElMessage.error(response?.message || '获取文档列表失败')
     }
   } catch (error) {
+    console.error('Error fetching documents:', error)
     ElMessage.error('获取文档列表失败')
   } finally {
     loading.value = false

@@ -3,7 +3,18 @@
     <el-card v-loading="loading">
       <template #header>
         <div class="card-header">
-          <h2>{{ document.title }}</h2>
+          <div class="title-section">
+            <el-button 
+              type="info" 
+              plain 
+              @click="router.push('/documents')"
+              class="back-button"
+            >
+              <el-icon><ArrowLeft /></el-icon>
+              返回列表
+            </el-button>
+            <h2>{{ document.title }}</h2>
+          </div>
           <div class="actions">
             <el-button type="primary" @click="handleDownload">
               <el-icon><Download /></el-icon>
@@ -71,7 +82,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { Download, Delete } from '@element-plus/icons-vue'
+import { Download, Delete, ArrowLeft } from '@element-plus/icons-vue'
 import { documentsApi } from '@/api/documents'
 import dayjs from 'dayjs'
 
@@ -165,6 +176,18 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.title-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .actions {
