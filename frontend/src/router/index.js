@@ -47,9 +47,12 @@ const routes = [
     meta: { requiresAuth: false },
     children: [
       {
-        path: 'search',
+        path: '/search',
         name: 'PublicSearch',
-        component: () => import('@/views/PublicSearch.vue')
+        component: () => import('@/views/PublicSearch.vue'),
+        meta: {
+          public: true
+        }
       },
       {
         path: 'documents/:id',
@@ -85,4 +88,4 @@ router.beforeEach((to, from, next) => {
   }
 })
 
-export default router 
+export default router

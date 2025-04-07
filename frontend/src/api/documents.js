@@ -1,9 +1,9 @@
-import request from '@/utils/request'
+import request from '@/api/request'
 
 export const documentsApi = {
   uploadDocument(data) {
     return request({
-      url: '/api/v1/documents/upload',
+      url: '/documents/upload',
       method: 'post',
       data,
       headers: {
@@ -14,30 +14,16 @@ export const documentsApi = {
 
   getDocuments(params) {
     return request({
-      url: '/api/v1/documents',
+      url: '/documents',
       method: 'get',
       params
     })
   },
 
-  getPublicDocuments(params) {
-    return request({
-      url: '/public/documents',
-      method: 'get',
-      params
-    })
-  },
-  
-  getPublicDocumentById(id) {
-    return request({
-      url: `/public/documents/${id}`,
-      method: 'get'
-    })
-  },
 
   getDocumentById(id) {
     return request({
-      url: `/api/v1/documents/${id}`,
+      url: `/documents/${id}`,
       method: 'get'
     })
   },
@@ -46,7 +32,7 @@ export const documentsApi = {
 
   updateDocument(id, data) {
     return request({
-      url: `/api/v1/documents/${id}`,
+      url: `/documents/${id}`,
       method: 'put',
       data
     })
@@ -54,28 +40,28 @@ export const documentsApi = {
 
   deleteDocument(id) {
     return request({
-      url: `/api/v1/documents/${id}`,
+      url: `/documents/${id}`,
       method: 'delete'
     })
   },
   
   publishDocument(id) {
     return request({
-      url: `/api/v1/documents/${id}/publish`,
+      url: `/documents/${id}/publish`,
       method: 'post'
     })
   },
   
   unpublishDocument(id) {
     return request({
-      url: `/api/v1/documents/${id}/unpublish`,
+      url: `/documents/${id}/unpublish`,
       method: 'post'
     })
   },
 
   getDashboardStats() {
     return request({
-      url: '/api/v1/documents/stats',
+      url: '/documents/stats',
       method: 'get'
     })
   }

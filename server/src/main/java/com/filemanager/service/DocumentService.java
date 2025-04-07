@@ -73,4 +73,6 @@ public interface DocumentService {
      * @return 文档详情
      */
     DocumentDTO getPublicDocument(Long id);
+    
+    Page<DocumentDTO> getPublicDocuments(Pageable pageable);
 } 

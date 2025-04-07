@@ -8,7 +8,7 @@
           </router-link>
         </div>
         <div class="nav-links">
-          <router-link to="/public/search">搜索文档</router-link>
+          <router-link to="/search">搜索文档</router-link>
           <router-link to="/login">登录</router-link>
         </div>
       </div>

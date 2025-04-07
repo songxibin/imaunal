@@ -29,4 +29,7 @@ public interface DocumentRepository extends JpaRepository<Document, Long>, JpaSp
     long sumFileSize();
     
     long countByStatus(DocumentStatus status);
-} 
+    
+    @Query("SELECT d FROM Document d WHERE d.status = 'PUBLISHED'")
+    Page<Document> findAllPublished(Pageable pageable);
+}

@@ -451,6 +451,14 @@ public class DocumentServiceImpl implements DocumentService {
     }
 
     @Override
+    public Page<DocumentDTO> getPublicDocuments(Pageable pageable) {
+        logger.debug("Fetching all published documents with pageable: {}", pageable);
+        Page<Document> documents = documentRepository.findAllPublished(pageable);
+        logger.debug("Found {} published documents", documents.getTotalElements());
+        return documents.map(this::convertToDTO);
+    }
+
+    @Override
     public Page<DocumentDTO> searchPublicDocuments(
             String keyword, String companyInfo, String brandInfo,
             String productCategory, String documentType, String language,
@@ -558,4 +566,4 @@ public class DocumentServiceImpl implements DocumentService {
         logger.trace("Document converted to DTO successfully");
         return dto;
     }
-} 
+}
