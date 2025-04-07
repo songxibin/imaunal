@@ -4,7 +4,7 @@ src/main/resources/application-dev.yml
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-logs
+logs/
 uploads
 ### STS ###
 .apt_generated
