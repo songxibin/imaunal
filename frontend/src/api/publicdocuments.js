@@ -1,10 +1,10 @@
-import request from '@/utils/request'
+import request from '@/api/request'
 
 export const documentsApi = {
 
   getPublicDocuments(params) {
     return request({
-      url: '/public/documents',
+      url: '/public/pubdocuments',
       method: 'get',
       params
     })
@@ -12,7 +12,7 @@ export const documentsApi = {
   
   getPublicDocumentById(id) {
     return request({
-      url: `/public/documents/${id}`,
+      url: `/public/pubdocuments/${id}`,
       method: 'get'
     })
   },
