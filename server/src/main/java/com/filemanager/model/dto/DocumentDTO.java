@@ -16,6 +16,12 @@ public class DocumentDTO {
     private Long fileSize;
     private String fileType;
     private List<String> tags;
+    private String companyInfo;
+    private String brandInfo;
+    private String productCategory;
+    private String documentType;
+    private String language;
+    private String version;
     private UserDTO creator;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

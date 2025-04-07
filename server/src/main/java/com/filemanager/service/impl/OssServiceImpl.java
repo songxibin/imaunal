@@ -27,18 +27,21 @@ public class OssServiceImpl implements OssService {
     private final String domain;
     private final String directoryPrefix;
     private final long urlExpiration;
+    private final String publicBucketName;
 
     public OssServiceImpl(
             OSS ossClient,
             @Value("${aliyun.oss.bucketName}") String bucketName,
             @Value("${aliyun.oss.domain}") String domain,
             @Value("${aliyun.oss.directory-prefix}") String directoryPrefix,
-            @Value("${aliyun.oss.url-expiration}") long urlExpiration) {
+            @Value("${aliyun.oss.url-expiration}") long urlExpiration,
+            @Value("${aliyun.oss.publicBucketName}") String publicBucketName) {
         this.ossClient = ossClient;
         this.bucketName = bucketName;
         this.domain = domain;
         this.directoryPrefix = directoryPrefix;
         this.urlExpiration = urlExpiration;
+        this.publicBucketName = publicBucketName;
     }
 
     @Override
@@ -105,6 +108,19 @@ public class OssServiceImpl implements OssService {
         ossClient.deleteObject(bucketName, fullObjectName);
         
         logger.info("File deleted successfully from OSS: {}", fullObjectName);
+    }
+
+    @Override
+    public void deletePublicFile(String objectName) throws IOException {
+        logger.debug("Deleting public file from OSS: {}", objectName);
+
+        // Create the full object name with directory prefix
+        String fullObjectName = directoryPrefix + "/" + objectName;
+
+        // Delete the object
+        ossClient.deleteObject(publicBucketName, fullObjectName);
+
+        logger.info("File deleted successfully from public OSS: {}", fullObjectName);
     }
 
     @Override

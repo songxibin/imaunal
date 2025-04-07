@@ -34,10 +34,17 @@ public class DocumentController {
             @RequestParam("file") MultipartFile file,
             @RequestParam("title") String title,
             @RequestParam(value = "description", required = false) String description,
-            @RequestParam(value = "tags", required = false) List<String> tags) {
+            @RequestParam(value = "tags", required = false) List<String> tags,
+            @RequestParam(value = "companyInfo", required = false) String companyInfo,
+            @RequestParam(value = "brandInfo", required = false) String brandInfo,
+            @RequestParam(value = "productCategory", required = false) String productCategory,
+            @RequestParam(value = "documentType", required = false) String documentType,
+            @RequestParam(value = "language", required = false) String language,
+            @RequestParam(value = "version", required = false) String version) {
         logger.info("Uploading document: {}, size: {}", title, file.getSize());
         try {
-            DocumentDTO document = documentService.uploadDocument(file, title, description, tags);
+            DocumentDTO document = documentService.uploadDocument(file, title, description, tags, 
+                companyInfo, brandInfo, productCategory, documentType, language, version);
             logger.info("Document uploaded successfully: {}", document.getDocumentId());
             return ResponseEntity.ok(new ApiResponse<>(
                 200,
@@ -127,17 +134,26 @@ public class DocumentController {
     @PutMapping("/{id}")
     public ResponseEntity<?> updateDocument(
             @PathVariable Long id,
-            @RequestParam(value = "title", required = false) String title,
-            @RequestParam(value = "description", required = false) String description,
-            @RequestParam(value = "tags", required = false) List<String> tags) {
+            @RequestBody DocumentDTO documentDTO) {
         logger.info("Updating document with ID: {}", id);
         try {
-            DocumentDTO document = documentService.updateDocument(id, title, description, tags);
-            logger.info("Document updated successfully: {}", document.getDocumentId());
+            DocumentDTO updatedDocument = documentService.updateDocument(
+                id, 
+                documentDTO.getTitle(), 
+                documentDTO.getDescription(), 
+                documentDTO.getTags(),
+                documentDTO.getCompanyInfo(),
+                documentDTO.getBrandInfo(),
+                documentDTO.getProductCategory(),
+                documentDTO.getDocumentType(),
+                documentDTO.getLanguage(),
+                documentDTO.getVersion()
+            );
+            logger.info("Document updated successfully: {}", updatedDocument.getDocumentId());
             return ResponseEntity.ok(new ApiResponse<>(
                 200,
                 "更新成功",
-                document
+                updatedDocument
             ));
         } catch (Exception e) {
             logger.error("Failed to update document: {}", id, e);

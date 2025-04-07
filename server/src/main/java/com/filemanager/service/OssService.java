@@ -34,6 +34,9 @@ public interface OssService {
      */
     void deleteFile(String objectName) throws IOException;
 
+
+    void deletePublicFile(String objectName) throws IOException;
+
     /**
      * Generate a signed URL for a file in Aliyun OSS
      *

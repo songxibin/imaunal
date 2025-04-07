@@ -36,6 +36,24 @@ public class Document {
     @Column(name = "tag")
     private List<String> tags;
 
+    @Column(name = "company_info")
+    private String companyInfo;
+
+    @Column(name = "brand_info")
+    private String brandInfo;
+
+    @Column(name = "product_category")
+    private String productCategory;
+
+    @Column(name = "document_type")
+    private String documentType;
+
+    @Column(name = "language")
+    private String language;
+
+    @Column(name = "version")
+    private String version;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "creator_id", nullable = false)
     private User creator;

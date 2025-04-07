@@ -5,6 +5,7 @@ src/main/resources/application-dev.yml
 !**/src/main/**/target/
 !**/src/test/**/target/
 logs
+uploads
 ### STS ###
 .apt_generated
 .classpath

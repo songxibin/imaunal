@@ -66,6 +66,24 @@
               {{ document.status === 'PUBLISHED' ? '已发布' : '草稿' }}
             </el-tag>
           </el-descriptions-item>
+          <el-descriptions-item label="公司信息">
+            {{ document.companyInfo || '未设置' }}
+          </el-descriptions-item>
+          <el-descriptions-item label="品牌信息">
+            {{ document.brandInfo || '未设置' }}
+          </el-descriptions-item>
+          <el-descriptions-item label="产品类别">
+            {{ document.productCategory || '未设置' }}
+          </el-descriptions-item>
+          <el-descriptions-item label="文档类型">
+            {{ document.documentType || '未设置' }}
+          </el-descriptions-item>
+          <el-descriptions-item label="适用语言">
+            {{ document.language || '未设置' }}
+          </el-descriptions-item>
+          <el-descriptions-item label="版本信息">
+            {{ document.version || '未设置' }}
+          </el-descriptions-item>
           <el-descriptions-item label="标签">
             <el-tag
               v-for="tag in document.tags"
@@ -92,6 +110,9 @@
             <!-- 根据文件类型显示不同的预览 -->
             <img v-if="isImage" :src="document.previewUrl" alt="预览图" />
             <iframe v-else-if="isPDF" :src="document.previewUrl" width="100%" height="500px"></iframe>
+            <div v-else-if="isTXT" class="txt-preview">
+              <pre>{{ txtContent }}</pre>
+            </div>
             <div v-else class="no-preview">
               此文件类型暂不支持预览
             </div>
@@ -101,8 +122,15 @@
         <div class="qr-section" v-if="document.status === 'PUBLISHED'">
           <h3>文档访问二维码</h3>
           <div class="qr-container">
-            <QRCodeVue :value="publicUrl" :size="200" level="H" />
+            <QRCodeVue 
+              :value="publicUrl" 
+              :size="200" 
+              level="H"
+              :foreground="'#000000'"
+              :background="'#ffffff'"
+            />
             <p class="qr-tip">扫描二维码访问文档</p>
+            <p class="qr-url">{{ publicUrl }}</p>
           </div>
         </div>
       </div>
@@ -124,6 +152,7 @@ const router = useRouter()
 const loading = ref(false)
 const document = ref({})
 const publicUrl = ref('')
+const txtContent = ref('')
 
 // 计算属性
 const isImage = computed(() => {
@@ -133,6 +162,11 @@ const isImage = computed(() => {
 
 const isPDF = computed(() => {
   return document.value.fileType?.toLowerCase() === 'pdf'
+})
+
+const isTXT = computed(() => {
+  return document.value.fileType?.toLowerCase() === 'text/plain' || 
+         document.value.fileType?.toLowerCase() === 'txt'
 })
 
 // 获取文档详情
@@ -147,6 +181,17 @@ const fetchDocumentDetail = async () => {
       // 这里使用当前域名和路径构建公共URL
       const baseUrl = window.location.origin
       publicUrl.value = `${baseUrl}/public/documents/${document.value.documentId}`
+    }
+    
+    // 如果是TXT文件，获取内容
+    if (isTXT.value && document.value.previewUrl) {
+      try {
+        const response = await fetch(document.value.previewUrl)
+        txtContent.value = await response.text()
+      } catch (error) {
+        console.error('Failed to fetch TXT content:', error)
+        txtContent.value = '无法加载文本内容'
+      }
     }
   } catch (error) {
     ElMessage.error('获取文档详情失败')
@@ -329,5 +374,32 @@ onMounted(() => {
   margin-top: 10px;
   color: #606266;
   font-size: 14px;
+}
+
+.qr-url {
+  margin-top: 10px;
+  color: #606266;
+  font-size: 12px;
+  word-break: break-all;
+  text-align: center;
+  max-width: 200px;
+}
+
+.txt-preview {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ebeef5;
+  border-radius: 4px;
+  max-height: 500px;
+  overflow: auto;
+  white-space: pre-wrap;
+  font-family: monospace;
+  line-height: 1.5;
+}
+
+.txt-preview pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 </style> 

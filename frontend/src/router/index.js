@@ -42,9 +42,27 @@ const routes = [
     ]
   },
   {
+    path: '/public',
+    component: () => import('@/views/PublicLayout.vue'),
+    meta: { requiresAuth: false },
+    children: [
+      {
+        path: 'search',
+        name: 'PublicSearch',
+        component: () => import('@/views/PublicSearch.vue')
+      },
+      {
+        path: 'documents/:id',
+        name: 'PublicDocumentDetail',
+        component: () => import('@/views/PublicDocumentDetail.vue')
+      }
+    ]
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    component: () => import('@/views/NotFound.vue')
+    component: () => import('@/views/NotFound.vue'),
+    meta: { requiresAuth: false }
   }
 ]
 

@@ -1,11 +1,11 @@
-import request from './request'
+import request from '@/utils/request'
 
 export const documentsApi = {
-  uploadDocument(formData) {
+  uploadDocument(data) {
     return request({
-      url: '/documents/upload',
+      url: '/api/v1/documents/upload',
       method: 'post',
-      data: formData,
+      data,
       headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -14,22 +14,39 @@ export const documentsApi = {
 
   getDocuments(params) {
     return request({
-      url: '/documents',
+      url: '/api/v1/documents',
       method: 'get',
       params
     })
   },
 
-  getDocumentById(id) {
+  getPublicDocuments(params) {
     return request({
-      url: `/documents/${id}`,
+      url: '/public/documents',
+      method: 'get',
+      params
+    })
+  },
+  
+  getPublicDocumentById(id) {
+    return request({
+      url: `/public/documents/${id}`,
       method: 'get'
     })
   },
 
+  getDocumentById(id) {
+    return request({
+      url: `/api/v1/documents/${id}`,
+      method: 'get'
+    })
+  },
+
+
+
   updateDocument(id, data) {
     return request({
-      url: `/documents/${id}`,
+      url: `/api/v1/documents/${id}`,
       method: 'put',
       data
     })
@@ -37,28 +54,28 @@ export const documentsApi = {
 
   deleteDocument(id) {
     return request({
-      url: `/documents/${id}`,
+      url: `/api/v1/documents/${id}`,
       method: 'delete'
     })
   },
   
   publishDocument(id) {
     return request({
-      url: `/documents/${id}/publish`,
+      url: `/api/v1/documents/${id}/publish`,
       method: 'post'
     })
   },
   
   unpublishDocument(id) {
     return request({
-      url: `/documents/${id}/unpublish`,
+      url: `/api/v1/documents/${id}/unpublish`,
       method: 'post'
     })
   },
 
   getDashboardStats() {
     return request({
-      url: '/documents/stats',
+      url: '/api/v1/documents/stats',
       method: 'get'
     })
   }
