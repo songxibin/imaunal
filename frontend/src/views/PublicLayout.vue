@@ -9,6 +9,7 @@
         </div>
         <div class="nav-links">
           <router-link to="/search">搜索文档</router-link>
+          <router-link to="/pricing">定价</router-link>
           <router-link to="/login">登录</router-link>
         </div>
       </div>
@@ -97,4 +98,4 @@
   padding: 0 20px;
   text-align: center;
 }
-</style> 
+</style>

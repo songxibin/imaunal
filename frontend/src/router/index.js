@@ -38,6 +38,15 @@ const routes = [
         path: 'profile',
         name: 'Profile',
         component: () => import('@/views/Profile.vue')
+      },
+      {
+        path: '/pricing',
+        name: 'Pricing',
+        component: () => import('@/views/public/Pricing.vue'),
+        meta: {
+          layout: 'public',
+          public: true
+        }
       }
     ]
   },
