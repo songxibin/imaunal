@@ -39,6 +39,9 @@ public class User implements UserDetails {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    @Column(name = "subscription_type")
+    private String subscriptionType = "FREE"; // Default to FREE plan
+
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();
@@ -70,4 +73,12 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-} 
+
+    public String getSubscriptionType() {
+        return subscriptionType;
+    }
+    
+    public void setSubscriptionType(String subscriptionType) {
+        this.subscriptionType = subscriptionType;
+    }
+}

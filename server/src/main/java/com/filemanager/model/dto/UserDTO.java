@@ -15,4 +15,14 @@ public class UserDTO {
     private String fullName;
     private List<String> roles;
     private LocalDateTime createdAt;
-} 
+    private String subscriptionType;
+    
+    // Add getter and setter
+    public String getSubscriptionType() {
+        return subscriptionType;
+    }
+    
+    public void setSubscriptionType(String subscriptionType) {
+        this.subscriptionType = subscriptionType;
+    }
+}

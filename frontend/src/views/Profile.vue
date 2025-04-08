@@ -1,10 +1,69 @@
 <template>
   <div class="profile-container">
-    <el-card>
+    <!-- 添加用户统计信息卡片 -->
+    <el-card class="stats-card">
       <template #header>
-        <h2>个人信息</h2>
+        <h2>账户统计</h2>
       </template>
       
+      <el-row :gutter="20">
+        <el-col :span="8">
+          <el-card shadow="hover" class="stat-item">
+            <template #header>
+              <div class="stat-header">
+                <el-icon><FolderOpened /></el-icon>  <!-- Changed Disk to FolderOpened -->
+                <span>存储空间</span>
+              </div>
+            </template>
+            <div class="stat-content">
+              <el-progress
+                type="dashboard"
+                :percentage="Math.round(userStats.storageUsagePercent || 0)"
+                :color="storageProgressColor"
+              />
+              <div class="storage-details">
+                <p>已用：{{ userStats.storageUsedFormatted || '0 B' }}</p>
+                <p>总量：{{ userStats.storageLimitFormatted || '0 B' }}</p>
+              </div>
+            </div>
+          </el-card>
+        </el-col>
+
+        <el-col :span="8">
+          <el-card shadow="hover" class="stat-item">
+            <template #header>
+              <div class="stat-header">
+                <el-icon><Document /></el-icon>
+                <span>文档统计</span>
+              </div>
+            </template>
+            <div class="stat-content">
+              <div class="stat-value">{{ userStats.totalWordCount || 0 }}</div>
+              <div class="stat-label">总字数</div>
+            </div>
+          </el-card>
+        </el-col>
+
+        <el-col :span="8">
+          <el-card shadow="hover" class="stat-item">
+            <template #header>
+              <div class="stat-header">
+                <el-icon><Fold /></el-icon>  <!-- Changed Language to Fold -->
+                <span>语言支持</span>
+              </div>
+            </template>
+            <div class="stat-content">
+              <div class="stat-value">{{ userStats.languageCount || 0 }}</div>
+              <div class="stat-label">支持的语言数量</div>
+            </div>
+          </el-card>
+        </el-col>
+      </el-row>
+    </el-card>
+
+    <!-- 现有的个人信息表单卡片 -->
+    <el-card class="profile-form">
+      <!-- 保持现有的个人信息表单内容不变 -->
       <el-form
         ref="formRef"
         :model="form"
@@ -64,10 +123,37 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useAuthStore } from '@/store/auth'
 import { authApi } from '@/api/auth'
 import { ElMessage } from 'element-plus'
+import { Document, FolderOpened, Fold } from '@element-plus/icons-vue'
+
+// 添加用户统计数据
+const userStats = ref({
+  storageUsed: 0,
+  storageLimit: 0,
+  storageUsedFormatted: '0 B',
+  storageLimitFormatted: '0 B',
+  storageUsagePercent: 0,
+  totalWordCount: 0,
+  languageCount: 0
+})
+
+// 存储空间进度条颜色计算
+const storageProgressColor = computed(() => {
+  const percent = userStats.value.storageUsagePercent
+  if (percent < 70) return '#67C23A'
+  if (percent < 90) return '#E6A23C'
+  return '#F56C6C'
+})
+
+
+// 在现有的 onMounted 中添加获取统计信息的调用
+onMounted(() => {
+  fetchUserInfo()
+  fetchUserStats()
+})
 
 const authStore = useAuthStore()
 const formRef = ref(null)
@@ -136,7 +222,7 @@ const fetchUserInfo = async () => {
     console.log('Profile received user data:', response)
     
     // Update the form with user data
-    const { username, email, fullName } = response
+    const { username, email, fullName, userid } = response
     form.value = {
       ...form.value,
       username,
@@ -146,6 +232,7 @@ const fetchUserInfo = async () => {
     
     // Update the auth store with user data
     authStore.updateUserInfo({
+      userid,
       username,
       email,
       fullName
@@ -156,6 +243,17 @@ const fetchUserInfo = async () => {
   }
 }
 
+// 获取用户统计信息
+const fetchUserStats = async () => {
+  try {
+    const userId = authStore.userid
+    const response = await authApi.getUserStats(userId)
+    userStats.value = response
+  } catch (error) {
+    console.error('获取用户统计信息失败:', error)
+    ElMessage.error('获取用户统计信息失败')
+  }
+}
 const handleSubmit = async () => {
   if (!formRef.value) return
   
@@ -186,20 +284,62 @@ const handleSubmit = async () => {
     loading.value = false
   }
 }
-
-onMounted(() => {
-  fetchUserInfo()
-})
 </script>
 
 <style scoped>
 .profile-container {
   padding: 20px;
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto;
+}
+
+.stats-card {
+  margin-bottom: 20px;
+}
+
+.stat-item {
+  height: 100%;
+}
+
+.stat-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.storage-details {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.storage-details p {
+  margin: 5px 0;
+  color: #606266;
+}
+
+.stat-value {
+  font-size: 36px;
+  font-weight: bold;
+  color: #409EFF;
+}
+
+.stat-label {
+  margin-top: 10px;
+  color: #606266;
+}
+
+.profile-form {
+  margin-top: 20px;
 }
 
 .el-divider {
   margin: 30px 0;
 }
-</style> 
+</style>

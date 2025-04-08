@@ -2,6 +2,7 @@ package com.filemanager.controller;
 
 import com.filemanager.model.User;
 import com.filemanager.model.dto.UserDTO;
+import com.filemanager.model.dto.UserStatsDTO;
 import com.filemanager.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -28,4 +29,9 @@ public class UserController {
         userService.changePassword(userService.getCurrentUser().getUserid(), oldPassword, newPassword);
         return ResponseEntity.ok().build();
     }
-} 
+
+    @GetMapping("/{userId}/stats")
+    public ResponseEntity<UserStatsDTO> getUserStats(@PathVariable Long userId) {
+            return ResponseEntity.ok(userService.getUserStats(userId));
+    }
+}

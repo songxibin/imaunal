@@ -25,6 +25,15 @@ public interface DocumentRepository extends JpaRepository<Document, Long>, JpaSp
 
     long countByCreatedAtAfter(LocalDateTime date);
     
+    @Query("SELECT SUM(d.fileSize) FROM Document d WHERE d.creator.id = :userId")
+    Long calculateStorageUsedByUser(@Param("userId") Long userId);
+
+    @Query("SELECT COUNT(DISTINCT d.language) FROM Document d WHERE d.creator.id = :userId")
+    Integer countLanguagesByUser(@Param("userId") Long userId);
+
+//    @Query("SELECT SUM(d.wordCount) FROM Document d WHERE d.creator.id = :userId")
+//    Long calculateTotalWordCountByUser(@Param("userId") Long userId);
+
     @Query("SELECT SUM(d.fileSize) FROM Document d")
     long sumFileSize();
     

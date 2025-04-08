@@ -44,5 +44,12 @@ export const authApi = {
       method: 'put',
       data
     })
+  },
+
+  getUserStats: (userId) => {
+    return request({
+      url: `/users/${userId}/stats`,
+      method: 'get'
+    })
   }
-} 
+}

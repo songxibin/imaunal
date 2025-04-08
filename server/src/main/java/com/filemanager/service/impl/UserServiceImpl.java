@@ -1,13 +1,21 @@
 package com.filemanager.service.impl;
 
+import com.filemanager.exception.ResourceNotFoundException;
 import com.filemanager.model.User;
+import com.filemanager.model.UserStats;
 import com.filemanager.model.dto.UserDTO;
+import com.filemanager.model.dto.UserStatsDTO;
+import com.filemanager.repository.DocumentRepository;
 import com.filemanager.repository.UserRepository;
+import com.filemanager.repository.UserStatsRepository;
 import com.filemanager.security.JwtService;
 import com.filemanager.service.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -16,15 +24,23 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
+@Slf4j
 public class UserServiceImpl implements UserService {
     private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
-    private final UserRepository userRepository;
-    private final JwtService jwtService;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private JwtService jwtService;
     private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+    @Autowired
+    private UserStatsRepository userStatsRepository;
+    @Autowired
+    private DocumentRepository documentRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -143,6 +159,7 @@ public class UserServiceImpl implements UserService {
         dto.setFullName(user.getFullName());
         dto.setRoles(user.getRoles());
         dto.setCreatedAt(user.getCreatedAt());
+        dto.setSubscriptionType(user.getSubscriptionType());  // Add this line
         logger.trace("User converted to DTO successfully");
         return dto;
     }
@@ -155,4 +172,119 @@ public class UserServiceImpl implements UserService {
         logger.trace("User converted to DTO with tokens successfully");
         return dto;
     }
-} 
+
+    public UserStatsDTO getUserStats(Long userId) {
+        log.debug("Getting stats for user: {}", userId);
+        
+        User user = userRepository.findById(userId)
+            .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+
+
+        UserStats userStats = userStatsRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+
+        UserStats stats = new UserStats();
+        stats.setUserId(userId);
+
+        // 获取存储空间使用情况
+        Long storageUsed = documentRepository.calculateStorageUsedByUser(userId);
+        stats.setStorageUsed(storageUsed != null ? storageUsed : 0L);
+        
+        // 根据用户订阅类型设置限制
+        Long storageLimit = getStorageLimitBySubscription(user.getSubscriptionType());
+        stats.setStorageLimit(storageLimit);
+        
+        // 计算使用百分比
+        double usagePercent = (storageUsed != null && storageLimit != null) 
+            ? (storageUsed.doubleValue() / storageLimit.doubleValue()) * 100 
+            : 0.0;
+        stats.setStorageUsagePercent(Math.min(100.0, usagePercent));
+
+        // 获取支持的语言数量
+        Integer languageCount = userStats.getLanguageCount();
+        stats.setLanguageCount(languageCount != null ? languageCount : 0);
+
+        // 获取总字数
+        Long wordCount = userStats.getTotalWordCount();
+        stats.setTotalWordCount(wordCount != null ? wordCount : 0L);
+
+        // 格式化存储空间显示
+        stats.setStorageUsedFormatted(formatFileSize(stats.getStorageUsed()));
+        stats.setStorageLimitFormatted(formatFileSize(stats.getStorageLimit()));
+
+        log.info("Stats retrieved for user {}: storage={}, languages={}, words={}", 
+            userId, stats.getStorageUsedFormatted(), stats.getLanguageCount(), stats.getTotalWordCount());
+
+        return convertToUserStatusDTO(stats);
+    }
+
+    private String formatFileSize(Long bytes) {
+        if (bytes == null) return "0 B";
+        
+        final String[] units = new String[] { "B", "KB", "MB", "GB", "TB" };
+        int digitGroups = (int) (Math.log10(bytes) / Math.log10(1024));
+        return new DecimalFormat("#,##0.#")
+                .format(bytes / Math.pow(1024, digitGroups)) + " " + units[digitGroups];
+    }
+
+    private Long getStorageLimitBySubscription(String subscriptionType) {
+        // 根据订阅类型返回存储限制（单位：字节）
+        return switch (subscriptionType) {
+            case "BASIC" -> 10L * 1024 * 1024 * 1024;     // 10GB
+            case "PRO" -> 50L * 1024 * 1024 * 1024;       // 50GB
+            case "ENTERPRISE" -> 1024L * 1024 * 1024 * 1024; // 1TB
+            default -> 5L * 1024 * 1024 * 1024;           // 5GB for free users
+        };
+    }
+
+
+    @Override
+    @Transactional
+    public UserDTO updateSubscription(Long userId, String subscriptionType) {
+        logger.info("Updating subscription for user ID: {} to {}", userId, subscriptionType);
+        
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> {
+                    logger.error("User not found with ID: {}", userId);
+                    return new ResourceNotFoundException("User not found");
+                });
+
+        // Validate subscription type
+        if (!isValidSubscriptionType(subscriptionType)) {
+            logger.error("Invalid subscription type: {}", subscriptionType);
+            throw new IllegalArgumentException("Invalid subscription type");
+        }
+
+        user.setSubscriptionType(subscriptionType.toUpperCase());
+        User updatedUser = userRepository.save(user);
+        logger.info("Subscription updated successfully for user: {}", updatedUser.getUsername());
+        
+        return convertToDTO(updatedUser);
+    }
+
+    private boolean isValidSubscriptionType(String subscriptionType) {
+        if (subscriptionType == null) return false;
+        String upperType = subscriptionType.toUpperCase();
+        return upperType.equals("FREE") || 
+               upperType.equals("BASIC") || 
+               upperType.equals("PRO") || 
+               upperType.equals("ENTERPRISE");
+    }
+
+
+    private UserStatsDTO convertToUserStatusDTO(UserStats user) {
+        logger.trace("Converting User to DTO: {}", user.getId());
+        UserStatsDTO dto = new UserStatsDTO();
+        dto.setUserId(user.getId());
+        dto.setLanguageCount(user.getLanguageCount());
+        dto.setTotalWordCount(user.getTotalWordCount());
+        dto.setStorageUsed(user.getStorageUsed());
+        dto.setStorageLimit(user.getStorageLimit());
+        dto.setStorageUsagePercent(user.getStorageUsagePercent());
+        dto.setStorageUsedFormatted(user.getStorageUsedFormatted());
+        dto.setStorageLimitFormatted(user.getStorageLimitFormatted());
+
+        logger.trace("UserStats converted to UserStatsDTO successfully");
+        return dto;
+    }
+}
