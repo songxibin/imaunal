@@ -8,6 +8,7 @@ import com.aliyun.oss.model.PutObjectRequest;
 import com.filemanager.service.OssService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
@@ -22,27 +23,21 @@ import java.util.Date;
 @Service
 public class OssServiceImpl implements OssService {
     private static final Logger logger = LoggerFactory.getLogger(OssServiceImpl.class);
-    private final OSS ossClient;
-    private final String bucketName;
-    private final String domain;
-    private final String directoryPrefix;
-    private final long urlExpiration;
-    private final String publicBucketName;
+    
+    @Autowired
+    private OSS ossClient;
+    
+    @Value("${aliyun.oss.bucketName}") 
+    private String bucketName;
+    @Value("${aliyun.oss.domain}") 
+    private String domain;
+    @Value("${aliyun.oss.directory-prefix}")
+    private String directoryPrefix;
+    @Value("${file.download-url-expiration}")
+    private long urlExpiration;
+    @Value("${aliyun.oss.public-bucket-name}")
+    private String publicBucketName;
 
-    public OssServiceImpl(
-            OSS ossClient,
-            @Value("${aliyun.oss.bucketName}") String bucketName,
-            @Value("${aliyun.oss.domain}") String domain,
-            @Value("${aliyun.oss.directory-prefix}") String directoryPrefix,
-            @Value("${aliyun.oss.url-expiration}") long urlExpiration,
-            @Value("${aliyun.oss.publicBucketName}") String publicBucketName) {
-        this.ossClient = ossClient;
-        this.bucketName = bucketName;
-        this.domain = domain;
-        this.directoryPrefix = directoryPrefix;
-        this.urlExpiration = urlExpiration;
-        this.publicBucketName = publicBucketName;
-    }
 
     @Override
     public String uploadFile(MultipartFile file, String objectName) throws IOException {

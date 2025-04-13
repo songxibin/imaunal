@@ -15,6 +15,7 @@ import jakarta.persistence.criteria.Predicate;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.data.domain.Page;
@@ -45,42 +46,21 @@ public class DocumentServiceImpl implements DocumentService {
         "application/pdf", // .pdf
         "text/plain" // .txt
     );
-    
-    private final DocumentRepository documentRepository;
-    private final UserService userService;
-    private final OssService ossService;
-    private final String uploadDir;
-    private final String storageType;
-    private final long urlExpiration;
-    private final String publicBucketName;
+    @Autowired
+    private DocumentRepository documentRepository;
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private OssService ossService;
+    @Value("${file.upload-dir}") 
+    private String uploadDir;
+    @Value("${file.storage-type}")
+    private String storageType;
+    @Value("${file.download-url-expiration}")
+    private long urlExpiration;
+    @Value("${aliyun.oss.public-bucket-name}")
+    private String publicBucketName;
 
-    public DocumentServiceImpl(
-            DocumentRepository documentRepository,
-            UserService userService,
-            OssService ossService,
-            @Value("${file.upload-dir}") String uploadDir,
-            @Value("${file.storage-type}") String storageType,
-            @Value("${file.download-url-expiration}") long urlExpiration,
-            @Value("${aliyun.oss.public-bucket-name}") String publicBucketName) {
-        this.documentRepository = documentRepository;
-        this.userService = userService;
-        this.ossService = ossService;
-        this.uploadDir = uploadDir;
-        this.storageType = storageType;
-        this.urlExpiration = urlExpiration;
-        this.publicBucketName = publicBucketName;
-        
-        // Create local upload directory if using local storage
-        if ("local".equals(storageType)) {
-            try {
-                Files.createDirectories(Paths.get(uploadDir));
-                logger.info("Upload directory created or already exists: {}", uploadDir);
-            } catch (IOException ex) {
-                logger.error("Could not create the directory where the uploaded files will be stored: {}", uploadDir, ex);
-                throw new RuntimeException("Could not create the directory where the uploaded files will be stored.", ex);
-            }
-        }
-    }
 
     @Override
     @Transactional
