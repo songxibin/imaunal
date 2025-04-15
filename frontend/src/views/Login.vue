@@ -77,6 +77,25 @@ const handleSubmit = async () => {
     loading.value = false
   }
 }
+
+const handleLogin = async () => {
+  try {
+    const response = await authApi.login(loginForm.value)
+    if (response.code === 200) {
+      const { token, user } = response.data
+      authStore.setToken(token)
+      authStore.setUserInfo({
+        userId: user.id,
+        username: user.username,
+        email: user.email,
+        fullName: user.fullName
+      })
+      router.push('/')
+    }
+  } catch (error) {
+    ElMessage.error('登录失败')
+  }
+}
 </script>
 
 <style scoped>
@@ -96,4 +115,4 @@ const handleSubmit = async () => {
   width: 100%;
   margin-bottom: 10px;
 }
-</style> 
+</style>

@@ -151,7 +151,6 @@ const storageProgressColor = computed(() => {
 
 // 在现有的 onMounted 中添加获取统计信息的调用
 onMounted(() => {
-  fetchUserInfo()
   fetchUserStats()
 })
 
@@ -216,37 +215,14 @@ const rules = {
   ]
 }
 
-const fetchUserInfo = async () => {
-  try {
-    const response = await authApi.getCurrentUser()
-    console.log('Profile received user data:', response)
-    
-    // Update the form with user data
-    const { username, email, fullName, userid } = response
-    form.value = {
-      ...form.value,
-      username,
-      email,
-      fullName
-    }
-    
-    // Update the auth store with user data
-    authStore.updateUserInfo({
-      userid,
-      username,
-      email,
-      fullName
-    })
-  } catch (error) {
-    console.error('Error fetching user info:', error)
-    ElMessage.error('获取用户信息失败')
-  }
-}
+
 
 // 获取用户统计信息
 const fetchUserStats = async () => {
   try {
-    const userId = authStore.userid
+    const userId = authStore.user.userId
+    console.log('User ID:', userId)
+    console.log('Auth Store:', authStore)
     const response = await authApi.getUserStats(userId)
     userStats.value = response
   } catch (error) {

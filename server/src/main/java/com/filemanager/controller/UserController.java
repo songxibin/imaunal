@@ -30,8 +30,15 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/{userId}/stats")
     public ResponseEntity<UserStatsDTO> getUserStats(@PathVariable Long userId) {
-            return ResponseEntity.ok(userService.getUserStats(userId));
+        return ResponseEntity.ok(userService.getUserStats(userId));
     }
+
+    @PutMapping("/{userId}/subscription")
+    public ResponseEntity<UserDTO> updateSubscription(
+            @PathVariable Long userId,
+            @RequestParam String subscriptionType) {
+        return ResponseEntity.ok(userService.updateSubscription(userId, subscriptionType));
+    }
+    
 }

@@ -175,47 +175,15 @@ public class UserServiceImpl implements UserService {
 
     public UserStatsDTO getUserStats(Long userId) {
         log.debug("Getting stats for user: {}", userId);
-        
-        User user = userRepository.findById(userId)
-            .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
-
-        UserStats userStats = userStatsRepository.findById(userId)
-                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
-
-        UserStats stats = new UserStats();
-        stats.setUserId(userId);
-
-        // 获取存储空间使用情况
-        Long storageUsed = documentRepository.calculateStorageUsedByUser(userId);
-        stats.setStorageUsed(storageUsed != null ? storageUsed : 0L);
-        
-        // 根据用户订阅类型设置限制
-        Long storageLimit = getStorageLimitBySubscription(user.getSubscriptionType());
-        stats.setStorageLimit(storageLimit);
-        
-        // 计算使用百分比
-        double usagePercent = (storageUsed != null && storageLimit != null) 
-            ? (storageUsed.doubleValue() / storageLimit.doubleValue()) * 100 
-            : 0.0;
-        stats.setStorageUsagePercent(Math.min(100.0, usagePercent));
-
-        // 获取支持的语言数量
-        Integer languageCount = userStats.getLanguageCount();
-        stats.setLanguageCount(languageCount != null ? languageCount : 0);
-
-        // 获取总字数
-        Long wordCount = userStats.getTotalWordCount();
-        stats.setTotalWordCount(wordCount != null ? wordCount : 0L);
-
-        // 格式化存储空间显示
-        stats.setStorageUsedFormatted(formatFileSize(stats.getStorageUsed()));
-        stats.setStorageLimitFormatted(formatFileSize(stats.getStorageLimit()));
+        UserStats userStats = userStatsRepository.findByUserId(userId);
+        if(userStats == null)
+            throw new ResourceNotFoundException("User stats not found");
 
         log.info("Stats retrieved for user {}: storage={}, languages={}, words={}", 
-            userId, stats.getStorageUsedFormatted(), stats.getLanguageCount(), stats.getTotalWordCount());
+            userId, userStats.getStorageUsedFormatted(), userStats.getLanguageCount(), userStats.getTotalWordCount());
 
-        return convertToUserStatusDTO(stats);
+        return convertToUserStatusDTO(userStats);
     }
 
     private String formatFileSize(Long bytes) {
