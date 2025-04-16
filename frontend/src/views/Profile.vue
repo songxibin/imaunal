@@ -1,124 +1,127 @@
 <template>
   <div class="profile-container">
-    <!-- 添加用户统计信息卡片 -->
-    <el-card class="stats-card">
-      <template #header>
-        <h2>账户统计</h2>
-      </template>
-      
-      <el-row :gutter="20">
-        <el-col :span="8">
-          <el-card shadow="hover" class="stat-item">
-            <template #header>
-              <div class="stat-header">
-                <el-icon><FolderOpened /></el-icon>  <!-- Changed Disk to FolderOpened -->
-                <span>存储空间</span>
-              </div>
-            </template>
-            <div class="stat-content">
-              <el-progress
-                type="dashboard"
-                :percentage="Math.round(userStats.storageUsagePercent || 0)"
-                :color="storageProgressColor"
+    <el-tabs v-model="activeTab">
+      <!-- 账户统计标签页 -->
+      <el-tab-pane label="账户统计" name="stats">
+        <el-card class="stats-card">
+          <el-row :gutter="20">
+            <!-- 现有的统计卡片内容保持不变 -->
+            <el-col :span="8">
+              <el-card shadow="hover" class="stat-item">
+                <template #header>
+                  <div class="stat-header">
+                    <el-icon><FolderOpened /></el-icon>  <!-- Changed Disk to FolderOpened -->
+                    <span>存储空间</span>
+                  </div>
+                </template>
+                <div class="stat-content">
+                  <el-progress
+                    type="dashboard"
+                    :percentage="Math.round(userStats.storageUsagePercent || 0)"
+                    :color="storageProgressColor"
+                  />
+                  <div class="storage-details">
+                    <p>已用：{{ userStats.storageUsedFormatted || '0 B' }}</p>
+                    <p>总量：{{ userStats.storageLimitFormatted || '0 B' }}</p>
+                  </div>
+                </div>
+              </el-card>
+            </el-col>
+
+            <el-col :span="8">
+              <el-card shadow="hover" class="stat-item">
+                <template #header>
+                  <div class="stat-header">
+                    <el-icon><Document /></el-icon>
+                    <span>文档统计</span>
+                  </div>
+                </template>
+                <div class="stat-content">
+                  <div class="stat-value">{{ userStats.totalWordCount || 0 }}</div>
+                  <div class="stat-label">总字数</div>
+                </div>
+              </el-card>
+            </el-col>
+
+            <el-col :span="8">
+              <el-card shadow="hover" class="stat-item">
+                <template #header>
+                  <div class="stat-header">
+                    <el-icon><Fold /></el-icon>  <!-- Changed Language to Fold -->
+                    <span>语言支持</span>
+                  </div>
+                </template>
+                <div class="stat-content">
+                  <div class="stat-value">{{ userStats.languageCount || 0 }}</div>
+                  <div class="stat-label">支持的语言数量</div>
+                </div>
+              </el-card>
+            </el-col>
+          </el-row>
+        </el-card>
+      </el-tab-pane>
+
+      <!-- 个人信息标签页 -->
+      <el-tab-pane label="个人信息" name="profile">
+        <el-card class="profile-form">
+          <!-- 现有的个人信息表单内容保持不变 -->
+          <el-form
+            ref="formRef"
+            :model="form"
+            :rules="rules"
+            label-width="100px"
+            @submit.prevent="handleSubmit"
+          >
+            <el-form-item label="用户名">
+              <el-input v-model="form.username" disabled />
+            </el-form-item>
+            
+            <el-form-item label="邮箱" prop="email">
+              <el-input v-model="form.email" type="email" />
+            </el-form-item>
+            
+            <el-form-item label="姓名" prop="fullName">
+              <el-input v-model="form.fullName" />
+            </el-form-item>
+            
+            <el-divider>修改密码</el-divider>
+            
+            <el-form-item label="原密码" prop="oldPassword">
+              <el-input
+                v-model="form.oldPassword"
+                type="password"
+                show-password
+                placeholder="如需修改密码请输入原密码"
               />
-              <div class="storage-details">
-                <p>已用：{{ userStats.storageUsedFormatted || '0 B' }}</p>
-                <p>总量：{{ userStats.storageLimitFormatted || '0 B' }}</p>
-              </div>
-            </div>
-          </el-card>
-        </el-col>
-
-        <el-col :span="8">
-          <el-card shadow="hover" class="stat-item">
-            <template #header>
-              <div class="stat-header">
-                <el-icon><Document /></el-icon>
-                <span>文档统计</span>
-              </div>
-            </template>
-            <div class="stat-content">
-              <div class="stat-value">{{ userStats.totalWordCount || 0 }}</div>
-              <div class="stat-label">总字数</div>
-            </div>
-          </el-card>
-        </el-col>
-
-        <el-col :span="8">
-          <el-card shadow="hover" class="stat-item">
-            <template #header>
-              <div class="stat-header">
-                <el-icon><Fold /></el-icon>  <!-- Changed Language to Fold -->
-                <span>语言支持</span>
-              </div>
-            </template>
-            <div class="stat-content">
-              <div class="stat-value">{{ userStats.languageCount || 0 }}</div>
-              <div class="stat-label">支持的语言数量</div>
-            </div>
-          </el-card>
-        </el-col>
-      </el-row>
-    </el-card>
-
-    <!-- 现有的个人信息表单卡片 -->
-    <el-card class="profile-form">
-      <!-- 保持现有的个人信息表单内容不变 -->
-      <el-form
-        ref="formRef"
-        :model="form"
-        :rules="rules"
-        label-width="100px"
-        @submit.prevent="handleSubmit"
-      >
-        <el-form-item label="用户名">
-          <el-input v-model="form.username" disabled />
-        </el-form-item>
-        
-        <el-form-item label="邮箱" prop="email">
-          <el-input v-model="form.email" type="email" />
-        </el-form-item>
-        
-        <el-form-item label="姓名" prop="fullName">
-          <el-input v-model="form.fullName" />
-        </el-form-item>
-        
-        <el-divider>修改密码</el-divider>
-        
-        <el-form-item label="原密码" prop="oldPassword">
-          <el-input
-            v-model="form.oldPassword"
-            type="password"
-            show-password
-            placeholder="如需修改密码请输入原密码"
-          />
-        </el-form-item>
-        
-        <el-form-item label="新密码" prop="newPassword">
-          <el-input
-            v-model="form.newPassword"
-            type="password"
-            show-password
-            placeholder="请输入新密码"
-          />
-        </el-form-item>
-        
-        <el-form-item label="确认新密码" prop="confirmPassword">
-          <el-input
-            v-model="form.confirmPassword"
-            type="password"
-            show-password
-            placeholder="请再次输入新密码"
-          />
-        </el-form-item>
-        
-        <el-form-item>
-          <el-button type="primary" native-type="submit" :loading="loading">
-            保存修改
-          </el-button>
-        </el-form-item>
-      </el-form>
-    </el-card>
+            </el-form-item>
+            
+            <el-form-item label="新密码" prop="newPassword">
+              <el-input
+                v-model="form.newPassword"
+                type="password"
+                show-password
+                placeholder="请输入新密码"
+              />
+            </el-form-item>
+            
+            <el-form-item label="确认新密码" prop="confirmPassword">
+              <el-input
+                v-model="form.confirmPassword"
+                type="password"
+                show-password
+                placeholder="请再次输入新密码"
+              />
+            </el-form-item>
+            
+            <el-form-item>
+              <el-button type="primary" native-type="submit" :loading="loading">
+                保存修改
+              </el-button>
+            </el-form-item>
+          </el-form>
+        </el-card>
+      </el-tab-pane>
+    </el-tabs>
   </div>
 </template>
 
@@ -260,6 +263,8 @@ const handleSubmit = async () => {
     loading.value = false
   }
 }
+// 添加标签页激活状态
+const activeTab = ref('stats')
 </script>
 
 <style scoped>
@@ -269,8 +274,13 @@ const handleSubmit = async () => {
   margin: 0 auto;
 }
 
+/* 移除多余的边距 */
 .stats-card {
-  margin-bottom: 20px;
+  margin-bottom: 0;
+}
+
+.profile-form {
+  margin-top: 0;
 }
 
 .stat-item {
