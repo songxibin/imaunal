@@ -3,11 +3,8 @@ package com.filemanager.service;
 
 import com.deepl.api.DeepLException;
 
-import java.io.IOException;
+public interface WordFileService {
 
-public interface TranslateService {
-
-    String TranslateText(String text) throws DeepLException, InterruptedException;
-
+    String translateWordFile(String file, String sourceLang, String targetLang) throws DeepLException, InterruptedException;
 
 } 

@@ -40,99 +40,176 @@
               <el-icon><Delete /></el-icon>
               删除
             </el-button>
+            <el-button 
+              v-if="isWordDocument"
+              type="primary"
+              :loading="translating"
+              @click="showTranslateDialog"
+            >
+              <el-icon><Document /></el-icon>
+              翻译文档
+            </el-button>
           </div>
+          <!-- 翻译对话框 -->
+          <el-dialog
+            v-model="translateDialogVisible"
+            title="文档翻译"
+            width="500px"
+          >
+            <el-form :model="translateForm" label-width="120px">
+              <el-form-item label="源语言">
+                <el-select v-model="translateForm.sourceLang">
+                  <el-option label="中文" value="ZH" />
+                  <el-option label="英文" value="EN" />
+                  <el-option label="日文" value="JA" />
+                  <!-- 可以添加更多语言选项 -->
+                </el-select>
+              </el-form-item>
+              <el-form-item label="目标语言">
+                <el-select v-model="translateForm.targetLang">
+                  <el-option label="中文" value="ZH" />
+                  <el-option label="英文" value="EN" />
+                  <el-option label="日文" value="JA" />
+                  <!-- 可以添加更多语言选项 -->
+                </el-select>
+              </el-form-item>
+            </el-form>
+            <template #footer>
+              <span class="dialog-footer">
+                <el-button @click="translateDialogVisible = false">取消</el-button>
+                <el-button type="primary" @click="handleTranslate" :loading="translating">
+                  开始翻译
+                </el-button>
+              </span>
+            </template>
+          </el-dialog>
         </div>
       </template>
       
       <div class="document-info">
-        <el-descriptions :column="2" border>
-          <el-descriptions-item label="文件类型">
-            {{ document.fileType }}
-          </el-descriptions-item>
-          <el-descriptions-item label="文件大小">
-            {{ formatFileSize(document.fileSize) }}
-          </el-descriptions-item>
-          <el-descriptions-item label="上传时间">
-            {{ formatDate(document.uploadTime) }}
-          </el-descriptions-item>
-          <el-descriptions-item label="更新时间">
-            {{ formatDate(document.updateTime) }}
-          </el-descriptions-item>
-          <el-descriptions-item label="上传者">
-            {{ document.creator?.username || '未知' }}
-          </el-descriptions-item>
-          <el-descriptions-item label="状态">
-            <el-tag :type="document.status === 'PUBLISHED' ? 'success' : 'info'">
-              {{ document.status === 'PUBLISHED' ? '已发布' : '草稿' }}
-            </el-tag>
-          </el-descriptions-item>
-          <el-descriptions-item label="公司信息">
-            {{ document.companyInfo || '未设置' }}
-          </el-descriptions-item>
-          <el-descriptions-item label="品牌信息">
-            {{ document.brandInfo || '未设置' }}
-          </el-descriptions-item>
-          <el-descriptions-item label="产品类别">
-            {{ document.productCategory || '未设置' }}
-          </el-descriptions-item>
-          <el-descriptions-item label="文档类型">
-            {{ document.documentType || '未设置' }}
-          </el-descriptions-item>
-          <el-descriptions-item label="适用语言">
-            {{ document.language || '未设置' }}
-          </el-descriptions-item>
-          <el-descriptions-item label="版本信息">
-            {{ document.version || '未设置' }}
-          </el-descriptions-item>
-          <el-descriptions-item label="标签">
-            <el-tag
-              v-for="tag in document.tags"
-              :key="tag"
-              class="mx-1"
-              size="small"
-            >
-              {{ tag }}
-            </el-tag>
-          </el-descriptions-item>
-          <el-descriptions-item label="文档ID">
-            {{ document.documentId }}
-          </el-descriptions-item>
-        </el-descriptions>
-        
-        <div class="description-section">
-          <h3>描述</h3>
-          <p>{{ document.description || '暂无描述' }}</p>
-        </div>
-        
-        <div class="preview-section" v-if="document.previewUrl">
-          <h3>预览</h3>
-          <div class="preview-container">
-            <!-- 根据文件类型显示不同的预览 -->
-            <img v-if="isImage" :src="document.previewUrl" alt="预览图" />
-            <iframe v-else-if="isPDF" :src="document.previewUrl" width="100%" height="500px"></iframe>
-            <div v-else-if="isTXT" class="txt-preview">
-              <pre>{{ txtContent }}</pre>
+        <el-row :gutter="20">
+          <!-- 左侧信息栏 -->
+          <el-col :span="18">
+            <el-descriptions :column="2" border>
+              <el-descriptions-item label="文件类型">
+                {{ document.fileType }}
+              </el-descriptions-item>
+              <el-descriptions-item label="文件大小">
+                {{ formatFileSize(document.fileSize) }}
+              </el-descriptions-item>
+              <el-descriptions-item label="上传时间">
+                {{ formatDate(document.uploadTime) }}
+              </el-descriptions-item>
+              <el-descriptions-item label="更新时间">
+                {{ formatDate(document.updateTime) }}
+              </el-descriptions-item>
+              <el-descriptions-item label="上传者">
+                {{ document.creator?.username || '未知' }}
+              </el-descriptions-item>
+              <el-descriptions-item label="状态">
+                <el-tag :type="document.status === 'PUBLISHED' ? 'success' : 'info'">
+                  {{ document.status === 'PUBLISHED' ? '已发布' : '草稿' }}
+                </el-tag>
+              </el-descriptions-item>
+              <el-descriptions-item label="公司信息">
+                {{ document.companyInfo || '未设置' }}
+              </el-descriptions-item>
+              <el-descriptions-item label="品牌信息">
+                {{ document.brandInfo || '未设置' }}
+              </el-descriptions-item>
+              <el-descriptions-item label="产品类别">
+                {{ document.productCategory || '未设置' }}
+              </el-descriptions-item>
+              <el-descriptions-item label="文档类型">
+                {{ document.documentType || '未设置' }}
+              </el-descriptions-item>
+              <el-descriptions-item label="适用语言">
+                {{ document.language || '未设置' }}
+              </el-descriptions-item>
+              <el-descriptions-item label="版本信息">
+                {{ document.version || '未设置' }}
+              </el-descriptions-item>
+              <el-descriptions-item label="标签">
+                <el-tag
+                  v-for="tag in document.tags"
+                  :key="tag"
+                  class="mx-1"
+                  size="small"
+                >
+                  {{ tag }}
+                </el-tag>
+              </el-descriptions-item>
+              <el-descriptions-item label="文档ID">
+                {{ document.documentId }}
+              </el-descriptions-item>
+            </el-descriptions>
+            
+            <div class="description-section">
+              <h3>描述</h3>
+              <p>{{ document.description || '暂无描述' }}</p>
             </div>
-            <div v-else class="no-preview">
-              此文件类型暂不支持预览
+            
+            <!-- 添加语言版本信息 -->
+            <div class="language-versions-section">
+              <h3>其他语言版本</h3>
+              <el-table :data="document.languageVersions" stripe style="width: 100%">
+                <el-table-column prop="fileName" label="文件名" />
+                <el-table-column prop="language" label="语言">
+                  <template #default="{ row }">
+                    <el-tag size="small">{{ getLanguageLabel(row.language) }}</el-tag>
+                  </template>
+                </el-table-column>
+                <el-table-column align="right">
+                  <template #default="{ row }">
+                    <el-button 
+                      type="primary" 
+                      link 
+                      size="small" 
+                      @click="handleVersionDownload(row.downloadUrl)"
+                    >
+                      下载
+                    </el-button>
+                  </template>
+                </el-table-column>
+              </el-table>
             </div>
-          </div>
-        </div>
-        
-        <div class="qr-section" v-if="document.status === 'PUBLISHED'">
-          <h3>文档访问二维码</h3>
-          <div class="qr-container">
-            <QRCodeVue 
-              :value="publicUrl" 
-              :size="200" 
-              level="H"
-              :foreground="'#000000'"
-              :background="'#ffffff'"
-            />
-            <p class="qr-tip">扫描二维码访问文档</p>
-            <p class="qr-url">{{ publicUrl }}</p>
-          </div>
-        </div>
+            
+            <div class="preview-section" v-if="document.previewUrl">
+              <h3>预览</h3>
+              <div class="preview-container">
+                <!-- 根据文件类型显示不同的预览 -->
+                <img v-if="isImage" :src="document.previewUrl" alt="预览图" />
+                <iframe v-else-if="isPDF" :src="document.previewUrl" width="100%" height="500px"></iframe>
+                <div v-else-if="isTXT" class="txt-preview">
+                  <pre>{{ txtContent }}</pre>
+                </div>
+                <div v-else class="no-preview">
+                  此文件类型暂不支持预览
+                </div>
+              </div>
+            </div>
+          </el-col>
+
+          <!-- 右侧二维码栏 -->
+          <el-col :span="6">
+            <div class="qr-section" v-if="document.status === 'PUBLISHED'">
+              <div class="qr-sticky">
+                <h3>文档访问二维码</h3>
+                <div class="qr-container">
+                  <QRCodeVue 
+                    :value="publicUrl" 
+                    :size="200" 
+                    level="H"
+                    :foreground="'#000000'"
+                    :background="'#ffffff'"
+                  />
+                  <p class="qr-tip">扫描二维码访问文档</p>
+                  <p class="qr-url">{{ publicUrl }}</p>
+                </div>
+              </div>
+            </div>
+          </el-col>
+        </el-row>
       </div>
     </el-card>
   </div>
@@ -142,6 +219,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
+import { Document } from '@element-plus/icons-vue'
 import { Download, Delete, ArrowLeft, Upload } from '@element-plus/icons-vue'
 import { documentsApi } from '@/api/documents'
 import QRCodeVue from 'qrcode.vue'
@@ -168,7 +246,36 @@ const isTXT = computed(() => {
   return document.value.fileType?.toLowerCase() === 'text/plain' || 
          document.value.fileType?.toLowerCase() === 'txt'
 })
+const translating = ref(false)
+const translateDialogVisible = ref(false)
+const translateForm = ref({
+  sourceLang: 'ZH',
+  targetLang: 'EN'
+})
 
+const isWordDocument = computed(() => {
+  const wordTypes = ['doc', 'docx']
+  return wordTypes.includes(document.value.fileType?.toLowerCase())
+})
+
+const showTranslateDialog = () => {
+  translateDialogVisible.value = true
+}
+
+const handleTranslate = async () => {
+  try {
+    translating.value = true
+    await documentsApi.translateDocument(document.value.documentId, translateForm.value)
+    ElMessage.success('文档翻译已完成')
+    translateDialogVisible.value = false
+    // 刷新文档列表
+    fetchDocumentDetail()
+  } catch (error) {
+    ElMessage.error('翻译失败：' + error.message)
+  } finally {
+    translating.value = false
+  }
+}
 // 获取文档详情
 const fetchDocumentDetail = async () => {
   try {
@@ -299,6 +406,28 @@ const formatDate = (date) => {
 onMounted(() => {
   fetchDocumentDetail()
 })
+
+// 语言标签映射
+const languageMap = {
+  'ZH': '中文',
+  'EN': '英文',
+  'JA': '日文',
+  // 可以添加更多语言映射
+}
+
+// 获取语言显示标签
+const getLanguageLabel = (langCode) => {
+  return languageMap[langCode] || langCode
+}
+
+// 处理版本下载
+const handleVersionDownload = (url) => {
+  if (url) {
+    window.open(url, '_blank')
+  } else {
+    ElMessage.warning('下载链接不可用')
+  }
+}
 </script>
 
 <style scoped>
@@ -370,6 +499,27 @@ onMounted(() => {
   background-color: #f9f9f9;
 }
 
+.qr-sticky {
+  position: sticky;
+  top: 20px;
+}
+
+.qr-section {
+  background: #fff;
+  border-radius: 4px;
+  padding: 15px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.1);
+}
+
+.qr-container {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid #ebeef5;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
 .qr-tip {
   margin-top: 10px;
   color: #606266;
@@ -402,4 +552,23 @@ onMounted(() => {
   white-space: pre-wrap;
   word-wrap: break-word;
 }
-</style> 
+
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.language-versions-section {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.1);
+}
+
+.language-versions-section h3 {
+  margin-bottom: 15px;
+  color: #303133;
+}
+</style>

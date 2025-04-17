@@ -43,9 +43,39 @@ public class DocumentServiceImpl implements DocumentService {
     private static final long MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
     private static final List<String> ALLOWED_FILE_TYPES = Arrays.asList(
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document", // .docx
+        "application/msword", // .doc
         "application/pdf", // .pdf
         "text/plain" // .txt
     );
+
+    private String standardizeContentType(String contentType, String fileName) {
+        if (contentType == null || fileName == null) {
+            return "unknown";
+        }
+        
+        String lowerFileName = fileName.toLowerCase();
+        
+        // Standardize Word documents
+        if (contentType.contains("wordprocessingml.document") || 
+            contentType.contains("msword") ||
+            lowerFileName.endsWith(".docx") ||
+            lowerFileName.endsWith(".doc")) {
+            return "word";
+        }
+        
+        // Standardize PDF
+        if (contentType.contains("pdf") || lowerFileName.endsWith(".pdf")) {
+            return "pdf";
+        }
+        
+        // Standardize Text
+        if (contentType.contains("text/plain") || lowerFileName.endsWith(".txt")) {
+            return "text";
+        }
+        
+        return contentType;
+    }
+
     @Autowired
     private DocumentRepository documentRepository;
     @Autowired
@@ -82,6 +112,10 @@ public class DocumentServiceImpl implements DocumentService {
 //            logger.error("Invalid file type: {}", contentType);
 //            throw new RuntimeException("只支持Word(.docx)、PDF和TXT文件");
 //        }
+        String originalContentType = file.getContentType();
+        String standardContentType = standardizeContentType(originalContentType, file.getOriginalFilename());
+        
+        logger.debug("Original content type: {}, Standardized to: {}", originalContentType, standardContentType);
         
         try {
             String fileName = UUID.randomUUID().toString() + "_" + file.getOriginalFilename();
@@ -106,7 +140,7 @@ public class DocumentServiceImpl implements DocumentService {
             document.setFileName(fileName);
             document.setFilePath(filePath);
             document.setFileSize(file.getSize());
-            document.setFileType(file.getContentType());
+            document.setFileType(standardContentType);
             document.setTags(tags);
             document.setCompanyInfo(companyInfo);
             document.setBrandInfo(brandInfo);

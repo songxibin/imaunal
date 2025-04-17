@@ -2,18 +2,15 @@ package com.filemanager.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "documents")
-public class Document {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+public class Document extends BaseEntity {
     @Column(nullable = false)
     private String title;
 
@@ -58,24 +55,7 @@ public class Document {
     @JoinColumn(name = "creator_id", nullable = false)
     private User creator;
 
-    @Column(name = "created_at")
-    private LocalDateTime createdAt;
-
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
-
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
     private DocumentStatus status = DocumentStatus.DRAFT;
-
-    @PrePersist
-    protected void onCreate() {
-        createdAt = LocalDateTime.now();
-        updatedAt = LocalDateTime.now();
-    }
-
-    @PreUpdate
-    protected void onUpdate() {
-        updatedAt = LocalDateTime.now();
-    }
-} 
+}

@@ -64,5 +64,13 @@ export const documentsApi = {
       url: '/documents/stats',
       method: 'get'
     })
+  },
+  
+  translateDocument: (documentId, translateParams) => {
+    return request({
+      url: `/documents/${documentId}/translate`,
+      method: 'post',
+      data: translateParams
+    })
   }
-} 
+}
