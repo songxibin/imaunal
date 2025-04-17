@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useAuthStore } from '@/store/auth'
+import { useAuthStore } from '@/store/authuser'
 
 const request = axios.create({
   baseURL: '/api/v1',

@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { useAuthStore } from '@/store/auth'
+import { useAuthStore } from '@/store/authuser'
 
 const routes = [
   {
@@ -38,6 +38,26 @@ const routes = [
         path: 'profile',
         name: 'Profile',
         component: () => import('@/views/Profile.vue')
+      }
+    ]
+  },
+  {
+    path: '/public',
+    component: () => import('@/layouts/PublicLayout.vue'),
+    meta: { requiresAuth: false },
+    children: [
+      {
+        path: '/search',
+        name: 'PublicSearch',
+        component: () => import('@/views/public/PublicSearch.vue'),
+        meta: {
+          public: true
+        }
+      },
+      {
+        path: 'documents/:id',
+        name: 'PublicDocumentDetail',
+        component: () => import('@/views/public/PublicDocumentDetail.vue')
       },
       {
         path: '/pricing',
@@ -47,26 +67,6 @@ const routes = [
           layout: 'public',
           public: true
         }
-      }
-    ]
-  },
-  {
-    path: '/public',
-    component: () => import('@/views/PublicLayout.vue'),
-    meta: { requiresAuth: false },
-    children: [
-      {
-        path: '/search',
-        name: 'PublicSearch',
-        component: () => import('@/views/PublicSearch.vue'),
-        meta: {
-          public: true
-        }
-      },
-      {
-        path: 'documents/:id',
-        name: 'PublicDocumentDetail',
-        component: () => import('@/views/PublicDocumentDetail.vue')
       }
     ]
   },

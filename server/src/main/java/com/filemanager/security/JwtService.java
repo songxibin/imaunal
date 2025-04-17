@@ -26,6 +26,9 @@ public class JwtService {
     @Value("${jwt.refresh-token.expiration}")
     private long refreshExpiration;
 
+    @Value("${jwt.clock-skew}")
+    private long clockSkew;
+
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
     }
@@ -85,6 +88,7 @@ public class JwtService {
         return Jwts
                 .parserBuilder()
                 .setSigningKey(getSignInKey())
+                .setAllowedClockSkewSeconds(clockSkew)
                 .build()
                 .parseClaimsJws(token)
                 .getBody();

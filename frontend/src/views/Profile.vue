@@ -127,7 +127,7 @@
 
 <script setup>
 import { ref, onMounted, computed } from 'vue'
-import { useAuthStore } from '@/store/auth'
+import { useAuthStore } from '@/store/authuser'
 import { authApi } from '@/api/auth'
 import { ElMessage } from 'element-plus'
 import { Document, FolderOpened, Fold } from '@element-plus/icons-vue'

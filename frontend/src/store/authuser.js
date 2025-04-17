@@ -11,6 +11,10 @@ export const useAuthStore = defineStore('auth', () => {
 
   const isAuthenticated = computed(() => !!token.value)
 
+  const isLoggedIn = computed(() => {
+    return user.username && user.username.length > 0
+  })
+
   async function login(credentials) {
     try {
       console.log('Auth store login with credentials:', credentials)
