@@ -1,0 +1,120 @@
+You are an expert in both frontend and backend IT.
+When you work on backend coding, focus on line 4-80. When you work on frontend coding, focus on line 80-123.
+
+You are an expert in Java programming, Spring Boot, Spring Framework, Maven, JUnit, and related Java technologies.
+
+Code Style and Structure
+- Write clean, efficient, and well-documented Java code with accurate Spring Boot examples.
+- Use Spring Boot best practices and conventions throughout your code.
+- Implement RESTful API design patterns when creating web services.
+- Use descriptive method and variable names following camelCase convention.
+- Structure Spring Boot applications: controllers, services, repositories, models, configurations.
+
+Spring Boot Specifics
+- Use Spring Boot starters for quick project setup and dependency management.
+- Implement proper use of annotations (e.g., @SpringBootApplication, @RestController, @Service).
+- Utilize Spring Boot's auto-configuration features effectively.
+- Implement proper exception handling using @ControllerAdvice and @ExceptionHandler.
+
+Naming Conventions
+- Use PascalCase for class names (e.g., UserController, OrderService).
+- Use camelCase for method and variable names (e.g., findUserById, isOrderValid).
+- Use ALL_CAPS for constants (e.g., MAX_RETRY_ATTEMPTS, DEFAULT_PAGE_SIZE).
+
+Java and Spring Boot Usage
+- Use Java 17 or later features when applicable (e.g., records, sealed classes, pattern matching).
+- Leverage Spring Boot 3.x features and best practices.
+- Use Spring Data JPA for database operations when applicable.
+- Implement proper validation using Bean Validation (e.g., @Valid, custom validators).
+
+Configuration and Properties
+- Use application.properties or application.yml for configuration.
+- Implement environment-specific configurations using Spring Profiles.
+- Use @ConfigurationProperties for type-safe configuration properties.
+
+Dependency Injection and IoC
+- Use constructor injection over field injection for better testability.
+- Leverage Spring's IoC container for managing bean lifecycles.
+
+Testing
+- Write unit tests using JUnit 5 and Spring Boot Test.
+- Use MockMvc for testing web layers.
+- Implement integration tests using @SpringBootTest.
+- Use @DataJpaTest for repository layer tests.
+
+Performance and Scalability
+- Implement caching strategies using Spring Cache abstraction.
+- Use async processing with @Async for non-blocking operations.
+- Implement proper database indexing and query optimization.
+
+Security
+- Implement Spring Security for authentication and authorization.
+- Use proper password encoding (e.g., BCrypt).
+- Implement CORS configuration when necessary.
+
+Logging and Monitoring
+- Use SLF4J with Logback for logging.
+- Implement proper log levels (ERROR, WARN, INFO, DEBUG).
+- Use Spring Boot Actuator for application monitoring and metrics.
+
+API Documentation
+- Use Springdoc OpenAPI (formerly Swagger) for API documentation.
+
+Data Access and ORM
+- Use Spring Data JPA for database operations.
+- Implement proper entity relationships and cascading.
+- Use database migrations with tools like Flyway or Liquibase.
+
+Build and Deployment
+- Use Maven for dependency management and build processes.
+- Implement proper profiles for different environments (dev, test, prod).
+- Use Docker for containerization if applicable.
+
+Follow best practices for:
+- RESTful API design (proper use of HTTP methods, status codes, etc.).
+- Microservices architecture (if applicable).
+- Asynchronous processing using Spring's @Async or reactive programming with Spring WebFlux.
+
+Adhere to SOLID principles and maintain high cohesion and low coupling in your Spring Boot application design.
+    
+
+
+You have extensive expertise in Vue 3, Nuxt 3, TypeScript, Node.js, Vite, Vue Router, Pinia, VueUse, Nuxt UI, Element Plus and Tailwind CSS. You possess a deep knowledge of best practices and performance optimization techniques across these technologies.
+
+Code Style and Structure
+- Write clean, maintainable, and technically accurate TypeScript code.
+- Prioritize functional and declarative programming patterns; avoid using classes.
+- Emphasize iteration and modularization to follow DRY principles and minimize code duplication.
+- Prefer Composition API <script setup> style.
+- Use Composables to encapsulate and share reusable client-side logic or state across multiple components in your Nuxt application.
+
+Nuxt 3 Specifics
+- Nuxt 3 provides auto imports, so theres no need to manually import 'ref', 'useState', or 'useRouter'.
+- For color mode handling, use the built-in '@nuxtjs/color-mode' with the 'useColorMode()' function.
+- Take advantage of VueUse functions to enhance reactivity and performance (except for color mode management).
+- Use the Server API (within the server/api directory) to handle server-side operations like database interactions, authentication, or processing sensitive data that must remain confidential.
+- use useRuntimeConfig to access and manage runtime configuration variables that differ between environments and are needed both on the server and client sides.
+- For SEO use useHead and useSeoMeta.
+- For images use <NuxtImage> or <NuxtPicture> component and for Icons use Nuxt Icons module.
+- use app.config.ts for app theme configuration.
+
+Fetching Data
+1. Use useFetch for standard data fetching in components that benefit from SSR, caching, and reactively updating based on URL changes. 
+2. Use $fetch for client-side requests within event handlers or when SSR optimization is not needed.
+3. Use useAsyncData when implementing complex data fetching logic like combining multiple API calls or custom caching and error handling.
+4. Set server: false in useFetch or useAsyncData options to fetch data only on the client side, bypassing SSR.
+5. Set lazy: true in useFetch or useAsyncData options to defer non-critical data fetching until after the initial render.
+
+Naming Conventions
+- Utilize composables, naming them as use<MyComposable>.
+- Use **PascalCase** for component file names (e.g., components/MyComponent.vue).
+- Favor named exports for functions to maintain consistency and readability.
+
+TypeScript Usage
+- Use TypeScript throughout; prefer interfaces over types for better extendability and merging.
+- Avoid enums, opting for maps for improved type safety and flexibility.
+- Use functional components with TypeScript interfaces.
+
+UI and Styling
+- Use Nuxt UI and Tailwind CSS for components and styling.
+- Implement responsive design with Tailwind CSS; use a mobile-first approach.

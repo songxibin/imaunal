@@ -51,6 +51,24 @@ public interface DocumentService {
     DashboardStatsDTO getDashboardStats();
 
     /**
+     * Translate a document to another language
+     *
+     * @param id The ID of the document to translate
+     * @param sourceLang The source language code
+     * @param targetLang The target language code
+     * @return The translated document DTO
+     */
+    DocumentDTO translateDocument(Long id, String sourceLang, String targetLang);
+
+    /**
+     * Get all translations for a master document
+     *
+     * @param masterDocumentId The ID of the master document
+     * @return List of translated document DTOs
+     */
+    List<DocumentDTO> getDocumentTranslations(Long masterDocumentId);
+
+    /**
      * 搜索公共文档（无需登录）
      * @param keyword 关键词
      * @param companyInfo 公司信息

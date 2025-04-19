@@ -1,9 +1,6 @@
 package com.filemanager.controller;
 
-import com.filemanager.model.dto.ApiResponse;
-import com.filemanager.model.dto.DocumentDTO;
-import com.filemanager.model.dto.DashboardStatsDTO;
-import com.filemanager.model.dto.PageResponse;
+import com.filemanager.model.dto.*;
 import com.filemanager.service.DocumentService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -123,6 +120,19 @@ public class DocumentController {
         try {
             DocumentDTO document = documentService.getDocument(id);
             logger.info("Document found: {}", document.getDocumentId());
+            
+            // If this is a translation, get the master document
+            if (document.getMasterDocumentId() != null) {
+                DocumentDTO masterDocument = documentService.getDocument(document.getMasterDocumentId());
+                document.setMasterDocument(masterDocument);
+            }
+            
+            // If this is a master document, get all translations
+            if (document.getIsMaster()) {
+                List<DocumentDTO> translations = documentService.getDocumentTranslations(id);
+                document.setTranslations(translations);
+            }
+            
             return ResponseEntity.ok(new ApiResponse<>(
                 200,
                 "success",
@@ -258,6 +268,46 @@ public class DocumentController {
             ));
         } catch (Exception e) {
             logger.error("Failed to get dashboard statistics", e);
+            throw e;
+        }
+    }
+
+    @PostMapping("/{id}/translate")
+    public ResponseEntity<?> translateDocument(
+            @PathVariable Long id,
+            @RequestBody TranslateRequest request) {
+        logger.info("Translating document with ID: {} to language: {}", id, request.getTargetLang());
+        try {
+            DocumentDTO translatedDocument = documentService.translateDocument(
+                id,
+                request.getSourceLang(),
+                request.getTargetLang()
+            );
+            logger.info("Document translated successfully: {}", translatedDocument.getDocumentId());
+            return ResponseEntity.ok(new ApiResponse<>(
+                200,
+                "翻译成功",
+                translatedDocument
+            ));
+        } catch (Exception e) {
+            logger.error("Failed to translate document: {}", id, e);
+            throw e;
+        }
+    }
+
+    @GetMapping("/{id}/translations")
+    public ResponseEntity<?> getDocumentTranslations(@PathVariable Long id) {
+        logger.info("Getting translations for document with ID: {}", id);
+        try {
+            List<DocumentDTO> translations = documentService.getDocumentTranslations(id);
+            logger.info("Found {} translations", translations.size());
+            return ResponseEntity.ok(new ApiResponse<>(
+                200,
+                "success",
+                translations
+            ));
+        } catch (Exception e) {
+            logger.error("Failed to get document translations: {}", id, e);
             throw e;
         }
     }

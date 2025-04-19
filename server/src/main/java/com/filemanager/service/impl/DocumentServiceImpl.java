@@ -546,6 +546,60 @@ public class DocumentServiceImpl implements DocumentService {
         return convertToDTO(document);
     }
 
+    @Override
+    public DocumentDTO translateDocument(Long id, String sourceLang, String targetLang) {
+        logger.info("Translating document {} from {} to {}", id, sourceLang, targetLang);
+        
+        // Get the original document
+        Document originalDocument = documentRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Document not found"));
+            
+        // Create a new document for the translation
+        Document translatedDocument = new Document();
+        translatedDocument.setTitle(originalDocument.getTitle() + " (" + targetLang + ")");
+        translatedDocument.setDescription(originalDocument.getDescription());
+        translatedDocument.setFileName(originalDocument.getFileName());
+        translatedDocument.setFileSize(originalDocument.getFileSize());
+        translatedDocument.setFileType(originalDocument.getFileType());
+        translatedDocument.setTags(originalDocument.getTags());
+        translatedDocument.setStatus(DocumentStatus.DRAFT);
+        translatedDocument.setIsMaster(false);
+        translatedDocument.setMasterDocumentId(id);
+        translatedDocument.setLanguage(targetLang);
+        
+        // Copy additional metadata
+        translatedDocument.setCompanyInfo(originalDocument.getCompanyInfo());
+        translatedDocument.setBrandInfo(originalDocument.getBrandInfo());
+        translatedDocument.setProductCategory(originalDocument.getProductCategory());
+        translatedDocument.setDocumentType(originalDocument.getDocumentType());
+        translatedDocument.setVersion(originalDocument.getVersion());
+        
+        // Save the translated document
+        translatedDocument = documentRepository.save(translatedDocument);
+        
+        // TODO: Implement actual translation logic here
+        // This would involve:
+        // 1. Extracting text from the original document
+        // 2. Translating the text using a translation service
+        // 3. Creating a new document with the translated content
+        // 4. Uploading the translated document to OSS
+        
+        logger.info("Translation document created: {}", translatedDocument.getId());
+        return convertToDTO(translatedDocument);
+    }
+
+    @Override
+    public List<DocumentDTO> getDocumentTranslations(Long masterDocumentId) {
+        logger.info("Getting translations for master document: {}", masterDocumentId);
+        
+        List<Document> translations = documentRepository.findByMasterDocumentId(masterDocumentId);
+        logger.info("Found {} translations", translations.size());
+        
+        return translations.stream()
+            .map(this::convertToDTO)
+            .toList();
+    }
+
     private DocumentDTO convertToDTO(Document document) {
         logger.trace("Converting Document to DTO: {}", document.getId());
         DocumentDTO dto = new DocumentDTO();
@@ -557,18 +611,24 @@ public class DocumentServiceImpl implements DocumentService {
         dto.setFileSize(document.getFileSize());
         dto.setFileType(document.getFileType());
         dto.setTags(document.getTags());
+        dto.setCreatedAt(document.getCreatedAt());
+        dto.setUpdatedAt(document.getUpdatedAt());
+        dto.setUploadTime(document.getCreatedAt());
+        dto.setDownloadUrl("/api/v1/documents/" + document.getId() + "/download");
+        dto.setPreviewUrl(getPreviewUrl(document.getId()));
+        dto.setStatus(document.getStatus().name());
+        
+        // Master document fields
+        dto.setIsMaster(document.getIsMaster());
+        dto.setMasterDocumentId(document.getMasterDocumentId());
+        
+        // Additional metadata
         dto.setCompanyInfo(document.getCompanyInfo());
         dto.setBrandInfo(document.getBrandInfo());
         dto.setProductCategory(document.getProductCategory());
         dto.setDocumentType(document.getDocumentType());
         dto.setLanguage(document.getLanguage());
         dto.setVersion(document.getVersion());
-        dto.setCreatedAt(document.getCreatedAt());
-        dto.setUpdatedAt(document.getUpdatedAt());
-        dto.setUploadTime(document.getCreatedAt());
-        dto.setDownloadUrl("/api/v1/documents/" + document.getId() + "/download");
-        dto.setPreviewUrl(getPreviewUrl(document.getId()));
-        dto.setStatus(document.getStatus());
         
         if (document.getCreator() != null) {
             UserDTO creatorDTO = new UserDTO();

@@ -11,6 +11,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Repository
 public interface DocumentRepository extends JpaRepository<Document, Long>, JpaSpecificationExecutor<Document> {
@@ -41,4 +42,6 @@ public interface DocumentRepository extends JpaRepository<Document, Long>, JpaSp
     
     @Query("SELECT d FROM Document d WHERE d.status = 'PUBLISHED'")
     Page<Document> findAllPublished(Pageable pageable);
+
+    List<Document> findByMasterDocumentId(Long masterDocumentId);
 }

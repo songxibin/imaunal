@@ -7,5 +7,9 @@ package com.filemanager.model;
  */
 public enum DocumentStatus {
     DRAFT,
-    PUBLISHED
+    IN_PROGRESS,    // 翻译进行中
+    REVIEWING,      // 审核中
+    PUBLISHED,      // 已发布
+    NEEDS_UPDATE,   // 需要更新（原文档已更新）
+    ARCHIVED        // 已归档
 } 
