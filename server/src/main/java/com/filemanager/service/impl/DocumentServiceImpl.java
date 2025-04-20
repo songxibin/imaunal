@@ -553,7 +553,10 @@ public class DocumentServiceImpl implements DocumentService {
         // Get the original document
         Document originalDocument = documentRepository.findById(id)
             .orElseThrow(() -> new RuntimeException("Document not found"));
-            
+        
+        User currentUser =   (User) userService.loadUserByUsername(
+            userService.getCurrentUser().getUsername());
+
         // Create a new document for the translation
         Document translatedDocument = new Document();
         translatedDocument.setTitle(originalDocument.getTitle() + " (" + targetLang + ")");
@@ -561,7 +564,8 @@ public class DocumentServiceImpl implements DocumentService {
         translatedDocument.setFileName(originalDocument.getFileName());
         translatedDocument.setFileSize(originalDocument.getFileSize());
         translatedDocument.setFileType(originalDocument.getFileType());
-        translatedDocument.setTags(originalDocument.getTags());
+        List<String> tags = originalDocument.getTags();
+        translatedDocument.setTags(tags);
         translatedDocument.setStatus(DocumentStatus.DRAFT);
         translatedDocument.setIsMaster(false);
         translatedDocument.setMasterDocumentId(id);
@@ -573,6 +577,8 @@ public class DocumentServiceImpl implements DocumentService {
         translatedDocument.setProductCategory(originalDocument.getProductCategory());
         translatedDocument.setDocumentType(originalDocument.getDocumentType());
         translatedDocument.setVersion(originalDocument.getVersion());
+
+        translatedDocument.setCreator(currentUser);
         
         // Save the translated document
         translatedDocument = documentRepository.save(translatedDocument);
@@ -598,6 +604,25 @@ public class DocumentServiceImpl implements DocumentService {
         return translations.stream()
             .map(this::convertToDTO)
             .toList();
+    }
+
+    @Override
+    public UserDTO getCurrentUser() {
+        logger.info("Getting current user information");
+        User currentUser = (User) userService.loadUserByUsername(
+                userService.getCurrentUser().getUsername());
+        
+        UserDTO userDTO = new UserDTO();
+        userDTO.setUserid(currentUser.getId());
+        userDTO.setUsername(currentUser.getUsername());
+        userDTO.setEmail(currentUser.getEmail());
+        userDTO.setFullName(currentUser.getFullName());
+        userDTO.setRoles(currentUser.getRoles());
+        userDTO.setCreatedAt(currentUser.getCreatedAt());
+        userDTO.setSubscriptionType(currentUser.getSubscriptionType());
+        
+        logger.info("Current user information retrieved: {}", userDTO.getUsername());
+        return userDTO;
     }
 
     private DocumentDTO convertToDTO(Document document) {

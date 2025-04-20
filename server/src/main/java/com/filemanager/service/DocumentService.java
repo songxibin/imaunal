@@ -3,6 +3,7 @@ package com.filemanager.service;
 import com.filemanager.model.Document;
 import com.filemanager.model.dto.DocumentDTO;
 import com.filemanager.model.dto.DashboardStatsDTO;
+import com.filemanager.model.dto.UserDTO;
 import org.springframework.core.io.Resource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -93,4 +94,11 @@ public interface DocumentService {
     DocumentDTO getPublicDocument(Long id);
     
     Page<DocumentDTO> getPublicDocuments(Pageable pageable);
+
+    /**
+     * Get the current authenticated user's information
+     *
+     * @return The current user's DTO
+     */
+    UserDTO getCurrentUser();
 } 

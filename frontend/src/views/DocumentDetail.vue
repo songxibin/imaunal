@@ -41,7 +41,6 @@
               删除
             </el-button>
             <el-button 
-              v-if="isWordDocument"
               type="primary"
               :loading="translating"
               @click="showTranslateDialog"
@@ -251,11 +250,6 @@ const translateDialogVisible = ref(false)
 const translateForm = ref({
   sourceLang: 'ZH',
   targetLang: 'EN'
-})
-
-const isWordDocument = computed(() => {
-  const wordTypes = ['doc', 'docx']
-  return wordTypes.includes(document.value.fileType?.toLowerCase())
 })
 
 const showTranslateDialog = () => {
